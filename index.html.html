@@ -1,0 +1,1467 @@
+None selected 
+
+Skip to content
+Using Gmail with screen readers
+in:draft 
+Conversations
+1% of 15 GB used
+Terms · Privacy · Program Policies
+Last account activity: 1 minute ago
+Open in 1 other location · Details
+Compose:
+New Message
+Recipients
+Subject
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Bangles | Handcrafted Jewellery Since 2010</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --emerald:#1a5c45;--emerald-lt:#2a7a5c;--emerald-dk:#0f3828;
+  --rose:#c9956e;--rose-lt:#e8bfa0;--rose-dk:#a06b44;
+  --cream:#faf6f0;--cream-dk:#f0e8dc;
+  --bg:#0c1610;--bg2:#111a14;--surface:rgba(20,32,22,0.97);
+  --border:rgba(201,149,110,0.22);--border-lt:rgba(201,149,110,0.5);
+  --white:#f5f0ea;--muted:#7a9080;--text:#d8e8e0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Raleway',sans-serif;overflow-x:hidden;line-height:1.7;}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:400;}
+h4,h5{font-family:'Raleway',sans-serif;font-weight:600;}
+a{text-decoration:none;color:inherit;}
+img{display:block;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--rose);}
+
+/* TOP BAR */
+.topbar{background:var(--emerald-dk);border-bottom:1px solid rgba(201,149,110,0.15);padding:9px 0;overflow:hidden;}
+.topbar-track{display:flex;gap:60px;width:max-content;animation:ticker 28s linear infinite;white-space:nowrap;}
+.topbar-track span{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose-lt);font-weight:500;}
+.topbar-track span i{color:var(--rose);margin-right:7px;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:500;background:rgba(12,22,16,0.97);backdrop-filter:blur(30px);border-bottom:1px solid var(--border);}
+.nav-wrap{max-width:1400px;margin:0 auto;padding:16px 50px;display:flex;justify-content:space-between;align-items:center;gap:24px;}
+.logo-block{cursor:pointer;}
+.logo-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--rose-lt);letter-spacing:3px;text-transform:uppercase;display:block;line-height:1;}
+.logo-tagline{font-size:8px;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-top:3px;display:block;}
+.nav-links{display:flex;list-style:none;gap:30px;}
+.nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);font-weight:600;transition:.3s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{color:var(--rose-lt);}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.cart-btn{position:relative;background:none;border:1px solid var(--border);color:var(--rose-lt);width:42px;height:42px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:.3s;}
+.cart-btn:hover{border-color:var(--rose);background:rgba(201,149,110,.08);}
+.cart-badge{position:absolute;top:-7px;right:-7px;background:var(--rose);color:#000;font-size:9px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.wa-nav{background:var(--emerald);color:#fff;padding:11px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;transition:.3s;white-space:nowrap;border:none;cursor:pointer;font-family:'Raleway',sans-serif;}
+.wa-nav:hover{background:var(--emerald-lt);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:5px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--rose-lt);transition:.3s;}
+.mob-nav{display:none;position:fixed;top:0;right:0;bottom:0;width:280px;background:rgba(10,18,12,0.99);z-index:999;padding:70px 36px 40px;flex-direction:column;gap:24px;border-left:1px solid var(--border);transform:translateX(100%);transition:.4s;}
+.mob-nav.open{display:flex;transform:translateX(0);}
+.mob-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--rose-lt);font-size:20px;cursor:pointer;}
+.mob-nav a{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:2px;font-weight:600;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.05);padding-bottom:14px;}
+.mob-nav a:hover{color:var(--rose-lt);}
+
+/* HERO */
+.hero{min-height:95vh;position:relative;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,var(--bg) 0%,var(--emerald-dk) 60%,var(--bg) 100%);}
+.hero-bg-img{position:absolute;inset:0;background:url('https://www.sanskritimagazine.com/wp-content/uploads/2014/01/bangles.jpg') center/cover no-repeat;opacity:.14;}
+.hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 2px 2px, rgba(201,149,110,.06) 1px, transparent 0);background-size:32px 32px;}
+.hero::after{content:'';position:absolute;top:50%;left:55%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(26,92,69,.35),transparent 70%);pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 50px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%;}
+.hero-label{display:inline-flex;align-items:center;gap:10px;color:var(--rose);font-size:10px;text-transform:uppercase;letter-spacing:5px;font-weight:700;margin-bottom:26px;}
+.hero-label::before{content:'';width:30px;height:1px;background:var(--rose);}
+.hero h1{font-size:70px;line-height:1.08;color:var(--cream);margin-bottom:22px;font-weight:400;}
+.hero h1 em{color:var(--rose-lt);font-style:italic;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--muted);font-weight:300;font-style:italic;margin-bottom:44px;line-height:1.6;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{padding:15px 38px;background:var(--rose);color:#000;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;transition:.3s;cursor:pointer;border:none;font-family:'Raleway',sans-serif;}
+.btn-primary:hover{background:var(--cream);transform:translateY(-3px);}
+.btn-outline{padding:15px 38px;border:1px solid rgba(201,149,110,.4);color:var(--rose-lt);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;transition:.3s;cursor:pointer;background:none;font-family:'Raleway',sans-serif;}
+.btn-outline:hover{border-color:var(--rose);color:var(--rose);}
+.hero-badges{display:flex;gap:28px;margin-top:50px;flex-wrap:wrap;}
+.hero-badge{display:flex;align-items:center;gap:9px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;}
+.hero-badge i{color:var(--rose);font-size:16px;}
+.hero-showcase{position:relative;display:flex;align-items:center;justify-content:center;}
+.showcase-ring{width:420px;height:420px;border-radius:50%;border:1px solid rgba(201,149,110,.18);position:relative;display:flex;align-items:center;justify-content:center;}
+.showcase-ring::before{content:'';position:absolute;inset:20px;border-radius:50%;border:1px dashed rgba(201,149,110,.1);}
+.showcase-center-img{width:280px;height:280px;border-radius:50%;object-fit:cover;border:3px solid rgba(201,149,110,.3);box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.showcase-float{position:absolute;background:rgba(15,56,40,.95);border:1px solid var(--border);padding:14px 18px;backdrop-filter:blur(10px);}
+.showcase-float-1{top:20px;right:-10px;}
+.showcase-float-2{bottom:40px;left:-20px;}
+.sf-label{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--rose);margin-bottom:3px;}
+.sf-val{font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);}
+.sf-sub{font-size:10px;color:var(--muted);}
+
+/* STATS */
+.stats-strip{background:var(--emerald-dk);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:26px 50px;display:flex;justify-content:center;gap:80px;flex-wrap:wrap;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;color:var(--rose-lt);line-height:1;}
+.stat-lbl{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--muted);margin-top:4px;}
+
+/* SECTIONS */
+.section{padding:100px 8%;}
+.sec-inner{max-width:1300px;margin:0 auto;}
+.sec-head{text-align:center;margin-bottom:60px;}
+.sec-eyebrow{color:var(--rose);font-size:10px;text-transform:uppercase;letter-spacing:5px;display:block;margin-bottom:12px;font-weight:700;}
+.sec-head h2{font-size:44px;color:var(--cream);}
+.sec-head h2::after{content:'';display:block;width:40px;height:2px;background:linear-gradient(to right,var(--rose),transparent);margin:14px auto 0;}
+.sec-head p{color:var(--muted);font-size:14px;margin-top:14px;font-weight:300;}
+
+/* PRODUCT CARDS */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.product-card{background:var(--surface);border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:.4s;position:relative;}
+.product-card:hover{border-color:var(--rose);transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.5);}
+.pc-img{height:260px;overflow:hidden;position:relative;background:#111a14;}
+.pc-img img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.product-card:hover .pc-img img{transform:scale(1.08);}
+.pc-badge{position:absolute;top:14px;left:14px;background:var(--rose);color:#000;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:5px 10px;z-index:2;}
+.pc-badge.in-stock{background:#25D366;color:#000;}
+.pc-pieces{position:absolute;top:14px;right:14px;background:rgba(15,56,40,.9);border:1px solid var(--border);color:var(--rose-lt);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 9px;z-index:2;}
+.pc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,22,16,.9),transparent 50%);opacity:0;transition:.4s;display:flex;align-items:flex-end;justify-content:center;padding:20px;}
+.product-card:hover .pc-overlay{opacity:1;}
+.pc-quick-btns{display:flex;gap:10px;width:100%;}
+.pc-quick-btn{flex:1;padding:10px;background:var(--rose);color:#000;border:none;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;font-family:'Raleway',sans-serif;transition:.2s;}
+.pc-quick-btn.outline{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);}
+.pc-quick-btn:hover{background:var(--cream);}
+.pc-body{padding:20px 18px;}
+.pc-category{font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+.pc-name{font-family:'Playfair Display',serif;font-size:17px;color:var(--cream);margin-bottom:10px;line-height:1.3;}
+.pc-price{display:flex;align-items:center;gap:10px;}
+.pc-price-main{font-family:'Playfair Display',serif;font-size:18px;color:var(--rose-lt);}
+.pc-stars{color:var(--rose);font-size:11px;margin-top:8px;}
+
+/* FEATURED BAND */
+.featured-band{background:linear-gradient(135deg,var(--emerald-dk),var(--bg2));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 8%;}
+.featured-band-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:70px;align-items:center;}
+.fb-img-wrap{position:relative;}
+.fb-img-wrap img{width:100%;height:500px;object-fit:cover;border:1px solid var(--border);}
+.fb-corner{position:absolute;bottom:-20px;right:-20px;background:var(--rose);color:#000;padding:22px 18px;text-align:center;font-family:'Playfair Display',serif;}
+.fb-corner strong{font-size:30px;display:block;line-height:1;}
+.fb-corner small{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
+.fb-text h2{font-size:42px;color:var(--cream);margin-bottom:18px;}
+.fb-text h2 em{color:var(--rose-lt);font-style:italic;}
+.fb-text p{color:var(--muted);font-size:14px;line-height:1.9;margin-bottom:16px;font-weight:300;}
+.fb-feats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
+.fb-feat{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text);}
+.fb-feat i{color:var(--rose);font-size:14px;width:16px;}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);max-width:1300px;margin:0 auto;}
+.why-card{background:var(--surface);padding:44px 32px;text-align:center;transition:.4s;}
+.why-card:hover{background:rgba(26,92,69,.15);transform:translateY(-4px);}
+.why-icon{width:64px;height:64px;border-radius:50%;background:rgba(201,149,110,.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--rose);margin:0 auto 20px;transition:.3s;}
+.why-card:hover .why-icon{background:rgba(201,149,110,.15);border-color:var(--rose);}
+.why-card h4{font-size:16px;color:var(--cream);margin-bottom:10px;letter-spacing:.5px;}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;}
+
+/* REVIEWS */
+#reviews{background:var(--bg2);}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto;}
+.rev-card{background:var(--surface);border:1px solid var(--border);padding:36px;position:relative;transition:.3s;}
+.rev-card:hover{border-color:rgba(201,149,110,.4);}
+.rev-qm{position:absolute;top:22px;right:28px;font-size:60px;color:rgba(201,149,110,.07);font-family:'Playfair Display',serif;line-height:1;}
+.rev-stars{color:var(--rose);font-size:13px;margin-bottom:16px;}
+.rev-text{font-family:'Cormorant Garamond',serif;font-size:16px;color:#c8d8d0;font-style:italic;line-height:1.85;margin-bottom:26px;font-weight:300;}
+.rev-who{display:flex;align-items:center;gap:13px;}
+.rev-who img{width:44px;height:44px;border-radius:50%;border:1px solid var(--rose);object-fit:cover;}
+.rev-name{font-size:14px;font-weight:600;color:var(--cream);}
+.rev-location{font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:1.5px;}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;text-align:left;font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);transition:.3s;}
+.faq-q:hover{color:var(--rose-lt);}
+.faq-q i{color:var(--rose);transition:.3s;font-size:14px;flex-shrink:0;margin-left:20px;}
+.faq-q.open i{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:.4s;font-size:14px;color:var(--muted);line-height:1.85;font-weight:300;}
+.faq-a.open{max-height:200px;padding-bottom:20px;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:65px;max-width:1200px;margin:0 auto;align-items:start;}
+.contact-info-card{background:var(--surface);border:1px solid var(--border);padding:40px;margin-bottom:20px;transition:.3s;display:flex;gap:20px;align-items:flex-start;}
+.contact-info-card:hover{border-color:rgba(201,149,110,.4);}
+.ci-icon{width:46px;height:46px;border-radius:50%;background:rgba(201,149,110,.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--rose);flex-shrink:0;}
+.ci-label{font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:2px;margin-bottom:5px;}
+.ci-val{font-size:14px;color:var(--text);}
+.contact-form-wrap{background:var(--emerald-dk);border:1px solid var(--border);padding:48px;}
+.contact-form-wrap h3{font-family:'Playfair Display',serif;font-size:28px;color:var(--cream);margin-bottom:8px;}
+.form-sub{font-size:13px;color:var(--muted);margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:13px 16px;color:var(--cream);font-size:14px;font-family:'Raleway',sans-serif;outline:none;transition:.3s;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--rose);}
+.form-group textarea{height:100px;resize:none;}
+.form-group select{cursor:pointer;color-scheme:dark;}
+.form-group select option{background:var(--emerald-dk);}
+.btn-submit{width:100%;background:var(--rose);color:#000;border:none;padding:16px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;cursor:pointer;transition:.3s;font-family:'Raleway',sans-serif;}
+.btn-submit:hover{background:var(--cream);transform:translateY(-2px);}
+.btn-wa-form{width:100%;background:none;border:1px solid rgba(37,211,102,.4);color:#25D366;padding:13px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;cursor:pointer;font-family:'Raleway',sans-serif;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.3s;}
+.btn-wa-form:hover{background:#25D366;color:#000;}
+
+/* SIZE GUIDE */
+.size-table-wrap{overflow-x:auto;margin:0 auto;max-width:700px;}
+table{width:100%;border-collapse:collapse;}
+thead{background:var(--emerald);}
+thead th{padding:14px 20px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--cream);font-weight:600;}
+tbody tr{border-bottom:1px solid var(--border);transition:.2s;}
+tbody tr:hover{background:rgba(201,149,110,.05);}
+tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
+.steps-list{max-width:600px;margin:0 auto 50px;}
+.step{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px;}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--rose);color:#000;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.step p{font-size:14px;color:var(--muted);padding-top:5px;}
+
+/* RETURNS */
+.returns-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;}
+.return-card{background:var(--surface);border:1px solid var(--border);padding:36px;}
+.return-card h4{font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;}
+.return-card h4 i{color:var(--rose);}
+.return-list{list-style:none;}
+.return-list li{font-size:13px;color:var(--muted);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:flex-start;gap:10px;line-height:1.6;}
+.return-list li::before{content:'✦';color:var(--rose);font-size:10px;margin-top:3px;flex-shrink:0;}
+
+/* PRODUCT MODAL */
+.product-modal{position:fixed;inset:0;z-index:700;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;}
+.product-modal.open{display:flex;}
+.modal-box{background:var(--bg2);border:1px solid var(--border);max-width:900px;width:100%;max-height:92vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1.1fr;position:relative;}
+.modal-img{min-height:400px;position:relative;}
+.modal-img img{width:100%;height:100%;object-fit:cover;}
+.modal-info{padding:40px 36px;display:flex;flex-direction:column;gap:14px;}
+.modal-category{font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:2px;}
+.modal-name{font-family:'Playfair Display',serif;font-size:26px;color:var(--cream);line-height:1.3;}
+.modal-price{font-family:'Playfair Display',serif;font-size:24px;color:var(--rose-lt);}
+.modal-desc{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;}
+.modal-stock{font-size:12px;color:#25D366;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+.modal-section-title{font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700;}
+.size-opts{display:flex;gap:8px;flex-wrap:wrap;}
+.size-opt{padding:8px 14px;border:1px solid var(--border);font-size:12px;font-weight:600;cursor:pointer;transition:.3s;color:var(--muted);background:transparent;}
+.size-opt:hover,.size-opt.active{border-color:var(--rose);color:var(--rose-lt);background:rgba(201,149,110,.08);}
+.colour-opts{display:flex;gap:8px;flex-wrap:wrap;}
+.colour-opt{padding:7px 13px;border:1px solid var(--border);font-size:11px;font-weight:600;cursor:pointer;transition:.3s;color:var(--muted);background:transparent;border-radius:20px;}
+.colour-opt:hover,.colour-opt.active{border-color:var(--rose);color:var(--rose-lt);background:rgba(201,149,110,.08);}
+.qty-wrap{display:flex;align-items:center;gap:0;border:1px solid var(--border);width:fit-content;}
+.qty-btn{width:36px;height:36px;background:rgba(201,149,110,.08);border:none;color:var(--rose-lt);font-size:18px;cursor:pointer;font-family:'Raleway',sans-serif;transition:.2s;}
+.qty-btn:hover{background:rgba(201,149,110,.2);}
+.qty-num{width:50px;text-align:center;font-size:15px;font-weight:600;color:var(--cream);background:transparent;border:none;border-left:1px solid var(--border);border-right:1px solid var(--border);padding:6px 0;}
+.modal-actions{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;}
+.modal-actions .btn-primary{flex:1;min-width:140px;}
+.modal-actions .btn-outline{padding:14px 20px;}
+.close-modal{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.5);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;z-index:5;border-radius:50%;}
+
+/* CART SIDEBAR */
+.cart-sidebar{position:fixed;top:0;right:0;bottom:0;width:380px;z-index:600;background:var(--bg2);border-left:1px solid var(--border);transform:translateX(100%);transition:.4s;display:flex;flex-direction:column;}
+.cart-sidebar.open{transform:translateX(0);}
+.cart-header{padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--cream);}
+.close-cart{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;}
+.cart-items{flex:1;overflow-y:auto;padding:20px 28px;}
+.cart-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.cart-item-img{width:70px;height:70px;object-fit:cover;flex-shrink:0;border:1px solid var(--border);}
+.cart-item-info{flex:1;}
+.cart-item-name{font-size:14px;color:var(--cream);margin-bottom:4px;}
+.cart-item-size{font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+.cart-item-price{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose-lt);}
+.cart-item-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;padding:4px;}
+.cart-item-remove:hover{color:#e55;}
+.cart-footer{padding:24px 28px;border-top:1px solid var(--border);}
+.cart-subtotal{display:flex;justify-content:space-between;font-size:14px;color:var(--text);margin-bottom:20px;}
+.cart-subtotal span:last-child{font-family:'Playfair Display',serif;font-size:20px;color:var(--rose-lt);}
+.empty-cart{text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-cart i{font-size:48px;margin-bottom:16px;color:var(--border);}
+
+/* CHECKOUT */
+.checkout-overlay{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px;}
+.checkout-overlay.open{display:flex;}
+.checkout-box{background:var(--bg2);border:1px solid var(--border);width:100%;max-width:700px;max-height:92vh;overflow-y:auto;position:relative;}
+.checkout-header{background:var(--emerald-dk);padding:28px 40px;border-bottom:1px solid var(--border);}
+.checkout-header h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--cream);}
+.checkout-header p{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:1px;}
+.checkout-body{padding:32px 40px;}
+.checkout-section{margin-bottom:28px;}
+.checkout-section-title{font-size:11px;color:var(--rose);text-transform:uppercase;letter-spacing:2.5px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.instructions-box{background:rgba(26,92,69,.12);border:1px solid rgba(201,149,110,.2);padding:20px 22px;margin-bottom:28px;}
+.instructions-box h4{font-size:13px;color:var(--rose-lt);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.instructions-list{list-style:none;}
+.instructions-list li{font-size:12px;color:var(--muted);padding:6px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.6;border-bottom:1px solid rgba(255,255,255,.04);}
+.instructions-list li:last-child{border-bottom:none;}
+.instructions-list li::before{content:'📌';font-size:11px;flex-shrink:0;margin-top:2px;}
+.payment-methods{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0;}
+.pay-method{border:1px solid var(--border);padding:14px 10px;text-align:center;cursor:pointer;transition:.3s;background:var(--surface);}
+.pay-method:hover,.pay-method.selected{border-color:var(--rose);background:rgba(201,149,110,.06);}
+.pay-method i,.pay-method .pay-icon{font-size:22px;color:var(--rose);margin-bottom:6px;display:block;}
+.pay-method span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);}
+.order-summary-box{background:rgba(201,149,110,.05);border:1px solid var(--border);padding:20px;}
+.order-sum-title{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--rose);margin-bottom:14px;}
+#order-items-list{list-style:none;}
+#order-items-list li{display:flex;justify-content:space-between;font-size:13px;color:var(--text);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.order-total{display:flex;justify-content:space-between;font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.btn-complete{width:100%;background:var(--emerald);border:none;padding:17px;color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;cursor:pointer;font-family:'Raleway',sans-serif;margin-top:20px;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-complete:hover{background:var(--emerald-lt);}
+.close-checkout{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;}
+
+/* RECEIPT */
+.receipt-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.9);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;padding:20px;}
+.receipt-overlay.open{display:flex;}
+.receipt-box{background:#fff;color:#1a1a1a;width:100%;max-width:500px;max-height:92vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.7);border-radius:2px;}
+.receipt-header{background:var(--emerald-dk);color:#fff;padding:28px 32px;text-align:center;}
+.receipt-logo{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:3px;color:var(--rose-lt);text-transform:uppercase;display:block;margin-bottom:4px;}
+.receipt-tagline{font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.receipt-thanks{background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#000;text-align:center;padding:18px 20px;}
+.receipt-thanks .thanks-emoji{font-size:28px;margin-bottom:6px;display:block;}
+.receipt-thanks h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:4px;}
+.receipt-thanks p{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.8;}
+.receipt-title{background:var(--emerald-dk);color:var(--rose-lt);text-align:center;padding:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;}
+.receipt-body{padding:24px 28px;}
+.receipt-row{display:flex;justify-content:space-between;align-items:flex-start;font-size:13px;padding:8px 0;border-bottom:1px dashed #e8e8e8;color:#333;}
+.receipt-row:last-child{border-bottom:none;}
+.receipt-row .label{color:#999;font-size:11px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0;margin-right:10px;}
+.receipt-row .val{font-weight:600;color:#1a1a1a;text-align:right;max-width:65%;}
+.receipt-divider{border:none;border-top:2px dashed #e0e0e0;margin:16px 0;}
+.receipt-items-title{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--rose-dk);font-weight:700;margin-bottom:12px;}
+.receipt-item-row{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid #f5f5f5;color:#333;}
+.receipt-item-row:last-child{border-bottom:none;}
+.receipt-total-box{background:var(--emerald-dk);color:#fff;padding:16px 22px;margin:18px -4px 0;display:flex;justify-content:space-between;align-items:center;}
+.receipt-total-box .total-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);}
+.receipt-total-box .total-amt{font-family:'Playfair Display',serif;font-size:26px;color:var(--rose-lt);}
+.receipt-note{font-size:11px;color:#888;text-align:center;padding:14px 22px;background:#fafafa;border-top:1px solid #eee;line-height:1.7;}
+.receipt-footer{background:var(--emerald-dk);color:var(--muted);font-size:10px;text-align:center;padding:14px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;}
+.receipt-actions{display:flex;gap:10px;padding:18px 28px 26px;background:#fff;}
+.btn-save-receipt{flex:1;background:var(--emerald);color:#fff;border:none;padding:14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;cursor:pointer;font-family:'Raleway',sans-serif;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-save-receipt:hover{background:var(--emerald-lt);}
+.btn-close-receipt{flex:1;background:none;border:2px solid #ddd;color:#555;padding:14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;cursor:pointer;font-family:'Raleway',sans-serif;transition:.3s;}
+.btn-close-receipt:hover{border-color:#999;color:#222;}
+.receipt-order-id{font-family:'Playfair Display',serif;font-size:20px;color:var(--rose-dk);font-weight:600;}
+.receipt-status-badge{display:inline-block;background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid #c8e6c9;}
+
+/* PAGE SECTIONS */
+.page-section{display:none;}
+.page-section.active{display:block;}
+
+/* ═══ FULL FOOTER ═══ */
+.site-footer{background:#050d08;padding:75px 8% 28px;border-top:1px solid var(--border);}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;max-width:1300px;margin:0 auto 55px;}
+.foot-brand{font-family:'Playfair Display',serif;font-size:22px;color:var(--rose-lt);letter-spacing:3px;margin-bottom:16px;display:block;}
+.foot-col p{color:var(--muted);font-size:13px;line-height:1.9;}
+.foot-col h4{color:var(--rose);font-size:10px;text-transform:uppercase;letter-spacing:3px;margin-bottom:18px;}
+.foot-links{list-style:none;}
+.foot-links li{margin-bottom:10px;}
+.foot-links a{color:var(--muted);font-size:13px;transition:.3s;cursor:pointer;}
+.foot-links a:hover{color:var(--rose-lt);padding-left:4px;}
+.socials{display:flex;gap:10px;margin-top:20px;}
+.soc-btn{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;transition:.3s;}
+.soc-btn:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-3px);}
+.foot-bar{text-align:center;padding-top:26px;border-top:1px solid rgba(255,255,255,.04);font-size:12px;color:#3a5040;}
+.about-inner{grid-template-columns:1fr 1.3fr;gap:80px;max-width:1100px;margin:0 auto;}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:499;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 8px 25px rgba(37,211,102,.4);animation:wap 2.5s infinite;}
+@keyframes wap{0%,100%{box-shadow:0 8px 25px rgba(37,211,102,.4)}50%{box-shadow:0 8px 40px rgba(37,211,102,.7)}}
+
+/* SEARCH + SORT BAR */
+.search-sort-bar{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto 32px;}
+.search-box{position:relative;flex:1;min-width:220px;max-width:420px;}
+.search-box i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--rose);font-size:14px;}
+.search-box input{width:100%;background:var(--surface);border:1px solid var(--border);padding:13px 16px 13px 42px;color:var(--cream);font-size:13px;font-family:'Raleway',sans-serif;outline:none;transition:.3s;}
+.search-box input:focus{border-color:var(--rose);}
+.search-box input::placeholder{color:var(--muted);}
+.sort-box select{background:var(--surface);border:1px solid var(--border);color:var(--cream);padding:13px 16px;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-family:'Raleway',sans-serif;outline:none;cursor:pointer;color-scheme:dark;transition:.3s;}
+.sort-box select:focus{border-color:var(--rose);}
+.no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);}
+.no-results i{font-size:40px;margin-bottom:14px;color:var(--border);display:block;}
+
+/* DELIVERY / BULK DISCOUNT UI */
+.delivery-note-box{background:rgba(26,92,69,.12);border:1px solid rgba(201,149,110,.2);padding:14px 16px;font-size:12px;color:var(--muted);margin-top:10px;line-height:1.7;}
+.delivery-note-box strong{color:var(--rose-lt);}
+.order-sum-line{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:5px 0;}
+.order-sum-line.discount{color:#4fae7a;}
+.order-sum-line.free{color:#4fae7a;font-weight:700;}
+.min-order-warning{background:rgba(200,80,60,.12);border:1px solid rgba(200,80,60,.35);color:#e08a75;font-size:12px;padding:12px 16px;margin-top:10px;display:none;}
+.min-order-warning.show{display:block;}
+
+/* RESPONSIVE */
+@media(max-width:1200px){.products-grid{grid-template-columns:repeat(3,1fr);}.why-grid{grid-template-columns:repeat(2,1fr);}.foot-grid{grid-template-columns:1fr 1fr;gap:40px;}.featured-band-inner{grid-template-columns:1fr;gap:50px;}.fb-img-wrap img{height:380px;}}
+@media(max-width:900px){.nav-links,.wa-nav{display:none;}.hamburger{display:flex;}.hero-content{grid-template-columns:1fr;gap:40px;padding:0 20px;}.hero-showcase{display:none;}.hero h1{font-size:46px;}.products-grid{grid-template-columns:repeat(2,1fr);}.stats-strip{gap:40px;}.contact-grid{grid-template-columns:1fr;}.returns-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.rev-grid{grid-template-columns:1fr 1fr;}.modal-box{grid-template-columns:1fr;}.modal-img{min-height:250px;}.payment-methods{grid-template-columns:repeat(2,1fr);}.about-inner{grid-template-columns:1fr !important;gap:30px !important;}.checkout-body{padding:24px 22px;}.checkout-header{padding:22px 22px;}.foot-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.nav-wrap{padding:14px 16px;}.logo-name{font-size:18px;}.hero{min-height:80vh;}.hero h1{font-size:30px;line-height:1.15;}.hero-sub{font-size:16px;margin-bottom:28px;}.hero-btns{flex-direction:column;gap:12px;}.btn-primary,.btn-outline{text-align:center;width:100%;padding:14px 20px;}.hero-badges{gap:16px;margin-top:32px;}.stats-strip{gap:18px;padding:20px 16px;justify-content:space-around;}.stat-num{font-size:26px;}.section{padding:60px 4%;}.sec-head{margin-bottom:36px;}.sec-head h2{font-size:28px;}.products-grid{grid-template-columns:repeat(2,1fr);gap:12px;}.pc-img{height:180px;}.pc-name{font-size:13px;}.pc-price-main{font-size:15px;}.pc-body{padding:12px 10px;}.why-grid{grid-template-columns:1fr 1fr;}.why-card{padding:28px 18px;}.rev-grid{grid-template-columns:1fr;}.featured-band{padding:50px 4%;}.fb-text h2{font-size:26px;}.contact-form-wrap{padding:28px 20px;}.foot-grid{grid-template-columns:1fr;gap:28px;}.cart-sidebar{width:100%;max-width:100%;}.checkout-body{padding:16px;}.checkout-header{padding:18px 16px;}.payment-methods{grid-template-columns:repeat(2,1fr);}.modal-box{grid-template-columns:1fr;margin:6px;}.modal-img{min-height:220px;}.modal-info{padding:20px 16px;gap:10px;}.modal-actions{flex-direction:column;}.receipt-body{padding:16px 18px;}.receipt-actions{flex-direction:column;padding:12px 18px 18px;}.receipt-box{max-width:100%;}.search-sort-bar{flex-direction:column;align-items:stretch;}.search-box{max-width:100%;}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-track">
+    <span><i class="fas fa-shield-alt"></i> 100% Secure Payment</span>
+    <span><i class="fas fa-truck"></i> Fast Nationwide Delivery</span>
+    <span><i class="fas fa-gem"></i> Trusted Since 2010</span>
+    <span><i class="fas fa-undo"></i> Easy 7-Day Returns</span>
+    <span><i class="fas fa-headset"></i> 24/7 Customer Support</span>
+    <span><i class="fas fa-gift"></i> Free Gift Wrapping Available</span>
+    <span><i class="fas fa-shield-alt"></i> 100% Secure Payment</span>
+    <span><i class="fas fa-truck"></i> Fast Nationwide Delivery</span>
+    <span><i class="fas fa-gem"></i> Trusted Since 2010</span>
+    <span><i class="fas fa-undo"></i> Easy 7-Day Returns</span>
+    <span><i class="fas fa-headset"></i> 24/7 Customer Support</span>
+    <span><i class="fas fa-gift"></i> Free Gift Wrapping Available</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-wrap">
+    <div class="logo-block" onclick="showSection('home')">
+      <span class="logo-name">Abdullah Bangles</span>
+      <span class="logo-tagline">Curating Elegance Since 2010</span>
+    </div>
+    <nav><ul class="nav-links">
+      <li><a id="nl-home" class="active" onclick="showSection('home')">Home</a></li>
+      <li><a id="nl-bangles" onclick="showSection('bangles')">Bangles</a></li>
+      <li><a id="nl-bracelets" onclick="showSection('bracelets')">Bracelets</a></li>
+      <li><a id="nl-about" onclick="showSection('about')">About</a></li>
+      <li><a id="nl-contact" onclick="showSection('contact')">Contact</a></li>
+      <li><a onclick="showSection('returns')">Returns</a></li>
+      <li><a onclick="showSection('sizeguide')">Size Guide</a></li>
+      <li><a onclick="showSection('faqs')">FAQs</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <button class="cart-btn" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="wa-nav" onclick="window.open('https://wa.me/923235063462?text=Assalam%20o%20Alaikum!%20I%20want%20to%20inquire%20about%20your%20bangles%20collection.','_blank')">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </button>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('mobNav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOB NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="document.getElementById('mobNav').classList.remove('open')"><i class="fas fa-times"></i></button>
+  <a onclick="showSection('home');closeMob()">Home</a>
+  <a onclick="showSection('bangles');closeMob()">Bangles</a>
+  <a onclick="showSection('bracelets');closeMob()">Bracelets</a>
+  <a onclick="showSection('about');closeMob()">About</a>
+  <a onclick="showSection('contact');closeMob()">Contact</a>
+  <a onclick="showSection('returns');closeMob()">Return Policy</a>
+  <a onclick="showSection('sizeguide');closeMob()">Size Guide</a>
+  <a onclick="showSection('faqs');closeMob()">FAQs</a>
+</div>
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<div class="page-section active" id="sec-home">
+  <section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <span class="hero-label">Handcrafted Jewellery</span>
+        <h1>Timeless Beauty,<br><em>Modern Craft</em></h1>
+        <p class="hero-sub">Discover our handpicked collection of bangles and bracelets — where tradition meets contemporary elegance.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showSection('bangles')">Explore Collection</button>
+          <button class="btn-outline" onclick="showSection('about')">Our Heritage</button>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge"><i class="fas fa-gem"></i> Premium Quality</div>
+          <div class="hero-badge"><i class="fas fa-truck"></i> Fast Delivery</div>
+          <div class="hero-badge"><i class="fas fa-hand-holding-heart"></i> Handcrafted</div>
+          <div class="hero-badge"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+        </div>
+      </div>
+      <div class="hero-showcase">
+        <div class="showcase-ring">
+          <img class="showcase-center-img" src="https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/10.JPG" alt="Bangles Collection">
+          <div class="showcase-float showcase-float-1">
+            <div class="sf-label">In Stock</div>
+            <div class="sf-val">13+</div>
+            <div class="sf-sub">Designs Available</div>
+          </div>
+          <div class="showcase-float showcase-float-2">
+            <div class="sf-label">Since</div>
+            <div class="sf-val">2010</div>
+            <div class="sf-sub">Trusted Brand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-item"><div class="stat-num">14+</div><div class="stat-lbl">Years of Trust</div></div>
+    <div class="stat-item"><div class="stat-num">5000+</div><div class="stat-lbl">Happy Customers</div></div>
+    <div class="stat-item"><div class="stat-num">13+</div><div class="stat-lbl">Unique Designs</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Authentic Quality</div></div>
+  </div>
+
+  <section class="section" style="background:var(--bg2);">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <span class="sec-eyebrow">Handpicked For You</span>
+        <h2>Featured Collection</h2>
+        <p>Our most loved pieces, crafted with exceptional care and precision</p>
+      </div>
+      <div class="products-grid" id="featuredGrid"></div>
+      <div style="text-align:center;margin-top:48px;">
+        <button class="btn-primary" onclick="showSection('bangles')">View All Bangles</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="featured-band">
+    <div class="featured-band-inner">
+      <div class="fb-img-wrap">
+        <img src="https://www.sanskritimagazine.com/wp-content/uploads/2014/01/bangles.jpg" alt="Our Heritage">
+        <div class="fb-corner"><strong>14+</strong><small>Years<br>Legacy</small></div>
+      </div>
+      <div class="fb-text">
+        <span class="sec-eyebrow">Our Heritage</span>
+        <h2>"Crafting beauty for<br>the <em>modern generation</em>"</h2>
+        <p>Founded in 2010, Abdullah Bangles began as a family atelier dedicated to traditional jewellery making in the heart of Rawalpindi.</p>
+        <p>Each piece is carefully selected and crafted with precision using premium materials — blending time-honoured techniques with contemporary design sensibilities.</p>
+        <div class="fb-feats">
+          <div class="fb-feat"><i class="fas fa-check-circle"></i> Premium Materials</div>
+          <div class="fb-feat"><i class="fas fa-check-circle"></i> Expert Craftsmanship</div>
+          <div class="fb-feat"><i class="fas fa-check-circle"></i> Family Business</div>
+          <div class="fb-feat"><i class="fas fa-check-circle"></i> 100% Authentic</div>
+        </div>
+        <button class="btn-primary" onclick="showSection('about')">Read Our Story</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Why Choose Us</span><h2>Our Promise to You</h2></div>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-icon"><i class="fas fa-gem"></i></div><h4>Quality Assured</h4><p>Every piece undergoes strict quality checks before reaching you.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-hand-holding-heart"></i></div><h4>Made with Love</h4><p>Handcrafted by skilled artisans who pour their passion into every piece.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-truck"></i></div><h4>Fast Delivery</h4><p>Nationwide delivery in 2–5 days. Same-day delivery in Rawalpindi & Islamabad.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-undo"></i></div><h4>Easy Returns</h4><p>Hassle-free 7-day return and exchange policy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews" style="background:var(--bg2);">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Client Love</span><h2>What Our Customers Say</h2></div>
+      <div class="rev-grid">
+        <div class="rev-card"><div class="rev-qm">"</div><div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="rev-text">"Absolutely stunning bangles! The quality is exceptional and they look even better in person. Got so many compliments at my wedding. Will definitely order again!"</p><div class="rev-who"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150" alt="Sana"><div><div class="rev-name">Sana Mirza</div><div class="rev-location">Lahore</div></div></div></div>
+        <div class="rev-card"><div class="rev-qm">"</div><div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="rev-text">"Fast delivery and beautiful packaging. The bracelet I ordered was exactly as shown. Abdullah Bangles is now my go-to for all jewellery gifts!"</p><div class="rev-who"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="Zara"><div><div class="rev-name">Zara Ahmed</div><div class="rev-location">Islamabad</div></div></div></div>
+        <div class="rev-card"><div class="rev-qm">"</div><div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="rev-text">"Best bangles in Rawalpindi! Trusted this shop since 2018. The quality has never dropped and the new designs are always fresh and elegant."</p><div class="rev-who"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150" alt="Rabia"><div><div class="rev-name">Rabia Noor</div><div class="rev-location">Rawalpindi</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME FULL FOOTER -->
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul class="foot-links">
+          <li><a onclick="showSection('home')">Home</a></li>
+          <li><a onclick="showSection('bangles')">Bangles</a></li>
+          <li><a onclick="showSection('bracelets')">Bracelets</a></li>
+          <li><a onclick="showSection('about')">About Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Customer Care</h4>
+        <ul class="foot-links">
+          <li><a onclick="showSection('returns')">Return Policy</a></li>
+          <li><a onclick="showSection('sizeguide')">Size Guide</a></li>
+          <li><a onclick="showSection('faqs')">FAQs</a></li>
+          <li><a onclick="showSection('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact Us</h4>
+        <ul class="foot-links">
+          <li><a href="tel:+923235063462">+92 323 506 3462</a></li>
+          <li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li>
+          <li><a>Pirwadhai, Rawalpindi</a></li>
+          <li><a>Mon–Sat: 10am – 8pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ BANGLES ═══════════════ -->
+<div class="page-section" id="sec-bangles">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Bangle Collection</span><h2>Elegant Bangles</h2><p>For every occasion — weddings, celebrations, or everyday elegance</p></div>
+      <div class="search-sort-bar">
+        <div class="search-box"><i class="fas fa-search"></i><input type="text" id="bangles-search" placeholder="Search bangles by name..." oninput="filterAndRender('bangle')"></div>
+        <div class="sort-box">
+          <select id="bangles-sort" onchange="filterAndRender('bangle')">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A-Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="banglesGrid"></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ BRACELETS ═══════════════ -->
+<div class="page-section" id="sec-bracelets">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Bracelet Collection</span><h2>Elegant Bracelets</h2><p>Delicate chains and charm bracelets for the modern woman</p></div>
+      <div class="search-sort-bar">
+        <div class="search-box"><i class="fas fa-search"></i><input type="text" id="bracelets-search" placeholder="Search bracelets by name..." oninput="filterAndRender('bracelet')"></div>
+        <div class="sort-box">
+          <select id="bracelets-sort" onchange="filterAndRender('bracelet')">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A-Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="braceletsGrid"></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<div class="page-section" id="sec-about">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="featured-band-inner about-inner">
+        <div class="fb-img-wrap"><img src="https://www.sanskritimagazine.com/wp-content/uploads/2014/01/bangles.jpg" alt="Our Story"><div class="fb-corner"><strong>14+</strong><small>Years<br>Legacy</small></div></div>
+        <div class="fb-text">
+          <span class="sec-eyebrow">Our Heritage</span>
+          <h2>A Family Legacy of <em>Elegance</em></h2>
+          <p style="margin-top:20px;">Founded in 2010, Abdullah Bangles began as a family atelier dedicated to traditional jewellery making in Pirwadhai, Rawalpindi.</p>
+          <p>Each piece is carefully selected and crafted with precision using premium materials. We combine time-honoured techniques with contemporary design to create bangles and bracelets that are truly special.</p>
+          <div class="fb-feats" style="margin-top:28px;">
+            <div class="fb-feat"><i class="fas fa-check-circle"></i> Family Business Since 2010</div>
+            <div class="fb-feat"><i class="fas fa-check-circle"></i> 100% Authentic Products</div>
+            <div class="fb-feat"><i class="fas fa-check-circle"></i> 5000+ Happy Customers</div>
+            <div class="fb-feat"><i class="fas fa-check-circle"></i> Nationwide Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<div class="page-section" id="sec-contact">
+  <section class="section" style="padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Get in Touch</span><h2>We'd Love to Hear From You</h2></div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info-card"><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="ci-label">Visit Our Store</div><div class="ci-val">Pirwadhai, Rawalpindi, Pakistan</div></div></div>
+          <div class="contact-info-card"><div class="ci-icon"><i class="fas fa-phone"></i></div><div><div class="ci-label">Phone / WhatsApp</div><div class="ci-val">+92 323 506 3462</div></div></div>
+          <div class="contact-info-card"><div class="ci-icon"><i class="fas fa-envelope"></i></div><div><div class="ci-label">Email</div><div class="ci-val">abdullahbangels153@gmail.com</div></div></div>
+          <div class="contact-info-card"><div class="ci-icon"><i class="fas fa-clock"></i></div><div><div class="ci-label">Hours</div><div class="ci-val">Mon–Sat: 10am – 8pm<br>Sunday: 11am – 6pm</div></div></div>
+        </div>
+        <div class="contact-form-wrap">
+          <h3>Send a Message</h3>
+          <p class="form-sub">Have a question or want to place a custom order? We're here to help.</p>
+          <div class="form-row">
+            <div class="form-group"><label>Your Name</label><input type="text" id="c-name" placeholder="Full name"></div>
+            <div class="form-group"><label>Email</label><input type="email" id="c-email" placeholder="your@email.com"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" id="c-phone" placeholder="+92 ..."></div>
+            <div class="form-group"><label>Subject</label><select id="c-subject"><option value="" disabled selected>Select a subject</option><option>Product Inquiry</option><option>Order Status</option><option>Custom Order Request</option><option>Complaint</option><option>Feedback</option><option>Other</option></select></div>
+          </div>
+          <div class="form-group"><label>Message</label><textarea id="c-msg" placeholder="Write your message here..."></textarea></div>
+          <button class="btn-submit" onclick="sendContactWA()">Send Message</button>
+          <button class="btn-wa-form" onclick="window.open('https://wa.me/923235063462','_blank')"><i class="fab fa-whatsapp"></i> Chat on WhatsApp Instead</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ RETURNS ═══════════════ -->
+<div class="page-section" id="sec-returns">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Our Policy</span><h2>Return & Exchange Policy</h2><p>Your satisfaction is our priority</p></div>
+      <div class="returns-grid">
+        <div class="return-card"><h4><i class="fas fa-info-circle"></i> Conditions for Return</h4><ul class="return-list"><li>Product must be unused and in original packaging</li><li>All tags and labels must be intact</li><li>Return request within 7 days of delivery</li><li>Product should not be damaged or altered</li></ul></div>
+        <div class="return-card"><h4><i class="fas fa-list-ol"></i> How to Return</h4><ul class="return-list"><li>Contact us via WhatsApp at +923235063462</li><li>Provide your order details and reason for return</li><li>Our team will arrange pickup or guide you</li><li>Refund processed within 3–5 business days</li></ul></div>
+      </div>
+      <div style="max-width:700px;margin:40px auto 0;text-align:center;padding:28px;background:rgba(201,149,110,.06);border:1px solid var(--border);"><p style="font-size:13px;color:var(--muted);">⚠️ Return shipping charges may apply unless the product is defective or incorrect.</p></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ SIZE GUIDE ═══════════════ -->
+<div class="page-section" id="sec-sizeguide">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Sizing</span><h2>Find Your Perfect Fit</h2></div>
+      <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:40px;">Follow these simple steps to measure your wrist:</p>
+      <div class="steps-list">
+        <div class="step"><div class="step-num">1</div><p>Take a measuring tape or a piece of string.</p></div>
+        <div class="step"><div class="step-num">2</div><p>Wrap it around your wrist at the widest point (just below the wrist bone).</p></div>
+        <div class="step"><div class="step-num">3</div><p>Make sure it's snug but not too tight.</p></div>
+        <div class="step"><div class="step-num">4</div><p>Note the measurement in inches or centimeters.</p></div>
+      </div>
+      <div class="size-table-wrap">
+        <table>
+          <thead><tr><th>Size</th><th>Wrist Measurement</th><th>Bangle Diameter</th></tr></thead>
+          <tbody>
+            <tr><td>Small (2.4)</td><td>6.5 – 7 inches</td><td>2.4 inches</td></tr>
+            <tr><td>Medium (2.6)</td><td>7 – 7.5 inches</td><td>2.6 inches</td></tr>
+            <tr><td>Large (2.8)</td><td>7.5 – 8 inches</td><td>2.8 inches</td></tr>
+            <tr><td>Extra Large (2.10)</td><td>8 – 8.5 inches</td><td>2.10 inches</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:24px;">💡 If between sizes, go for the larger size for comfort. <a href="https://wa.me/923235063462" target="_blank" style="color:var(--rose);">WhatsApp us</a> for personalized help!</p>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ FAQs ═══════════════ -->
+<div class="page-section" id="sec-faqs">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Help Center</span><h2>Frequently Asked Questions</h2></div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">📦 How long does delivery take? <i class="fas fa-plus"></i></button><div class="faq-a">Delivery typically takes 2–5 business days. For Rawalpindi/Islamabad, usually 1–2 days. Same-day delivery also available in selected areas.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">💳 What payment methods do you accept? <i class="fas fa-plus"></i></button><div class="faq-a">We accept Cash on Delivery (COD), Bank Transfer, JazzCash, EasyPaisa, and Credit/Debit Cards.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">✨ Are the bangles adjustable? <i class="fas fa-plus"></i></button><div class="faq-a">Most bangles come in standard sizes (2.4, 2.6, 2.8, 2.10). All colours are available. Bracelets are adjustable.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">🎨 Are all colours available? <i class="fas fa-plus"></i></button><div class="faq-a">Yes! All colours and sizes are available for all products. Select your preferred colour and size in the product page before ordering.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">🎁 Do you offer gift wrapping? <i class="fas fa-plus"></i></button><div class="faq-a">Yes! We offer complimentary gift wrapping on all orders. Just mention it when placing your order.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">🔄 Can I exchange my product? <i class="fas fa-plus"></i></button><div class="faq-a">Yes, exchanges are available within 7 days of delivery in original condition with tags intact.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">📍 Can I visit your shop? <i class="fas fa-plus"></i></button><div class="faq-a">Absolutely! Visit us in Pirwadhai, Rawalpindi. Contact on WhatsApp (+923235063462) for exact location.</div></div>
+      </div>
+      <p style="text-align:center;margin-top:40px;font-size:14px;color:var(--muted);">Still have questions? <a href="https://wa.me/923235063462" target="_blank" style="color:var(--rose-lt);">Contact us on WhatsApp</a></p>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ PRODUCT MODAL ═══════════════ -->
+<div class="product-modal" id="productModal">
+  <div class="modal-box">
+    <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-img"><img id="modal-img" src="" alt=""></div>
+    <div class="modal-info">
+      <div class="modal-category" id="modal-cat"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-price" id="modal-price"></div>
+      <div class="modal-stock"><i class="fas fa-circle" style="font-size:8px;margin-right:5px;"></i> In Stock — All Sizes & Colours Available</div>
+      <div class="modal-desc" id="modal-desc">Expertly crafted with premium materials. Perfect for weddings, celebrations and everyday elegance. Available in all sizes and all colours.</div>
+      <div>
+        <div class="modal-section-title">Select Size</div>
+        <div class="size-opts" id="modal-sizes">
+          <div class="size-opt active" onclick="selectSize(this)">2.4</div>
+          <div class="size-opt" onclick="selectSize(this)">2.6</div>
+          <div class="size-opt" onclick="selectSize(this)">2.8</div>
+          <div class="size-opt" onclick="selectSize(this)">2.10</div>
+        </div>
+      </div>
+      <div>
+        <div class="modal-section-title">Select Colour</div>
+        <div class="colour-opts" id="modal-colours">
+          <div class="colour-opt active" onclick="selectColour(this)">Golden</div>
+          <div class="colour-opt" onclick="selectColour(this)">Silver</div>
+          <div class="colour-opt" onclick="selectColour(this)">Rose Gold</div>
+          <div class="colour-opt" onclick="selectColour(this)">Red</div>
+          <div class="colour-opt" onclick="selectColour(this)">Green</div>
+          <div class="colour-opt" onclick="selectColour(this)">Blue</div>
+          <div class="colour-opt" onclick="selectColour(this)">Black</div>
+          <div class="colour-opt" onclick="selectColour(this)">White</div>
+          <div class="colour-opt" onclick="selectColour(this)">Multi-Colour</div>
+        </div>
+      </div>
+      <div>
+        <div class="modal-section-title">Quantity</div>
+        <div class="qty-wrap">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <span class="qty-num" id="modal-qty">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+      <div id="modal-pieces-info" style="font-size:12px;color:var(--rose);font-weight:600;"></div>
+      <div class="modal-actions">
+        <button class="btn-primary" onclick="addToCartFromModal()"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+        <button class="btn-outline" onclick="buyNow()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>Shopping Bag</h3>
+    <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="empty-cart"><i class="fas fa-shopping-bag"></i><p>Your bag is empty</p></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">Rs. 0</span></div>
+    <button class="btn-complete" onclick="openCheckout()"><i class="fas fa-arrow-right"></i> Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- CHECKOUT -->
+<div class="checkout-overlay" id="checkoutOverlay">
+  <div class="checkout-box">
+    <button class="close-checkout" onclick="closeCheckout()"><i class="fas fa-times"></i></button>
+    <div class="checkout-header">
+      <h2>Complete Your Order</h2>
+      <p>Fill in details below to confirm your purchase</p>
+    </div>
+    <div class="checkout-body">
+      <div class="instructions-box">
+        <h4><i class="fas fa-info-circle" style="color:var(--rose);"></i> Order Instructions — Please Read</h4>
+        <ul class="instructions-list">
+          <li>Double check your selected size and colour before placing the order — changes cannot be made after confirmation.</li>
+          <li>Cash on Delivery (COD) orders: Payment is collected at the time of delivery. Please keep exact change ready.</li>
+          <li>JazzCash / EasyPaisa / Bank Transfer: Send payment screenshot on WhatsApp after ordering.</li>
+          <li>Delivery charges will be confirmed via WhatsApp within 1–2 hours of placing the order.</li>
+          <li>Provide a complete and accurate delivery address including city, area and nearest landmark.</li>
+          <li>Orders placed after 6 PM will be processed the next working day.</li>
+          <li>For custom orders or bulk purchases, WhatsApp us directly at +92 323 506 3462.</li>
+        </ul>
+      </div>
+      <div class="checkout-section">
+        <div class="checkout-section-title"><i class="fas fa-map-marker-alt"></i> Shipping Information</div>
+        <div class="form-group"><label>Full Name</label><input type="text" id="sh-name" placeholder="Your Full Name"></div>
+        <div class="form-group"><label>WhatsApp Number</label><input type="tel" id="sh-phone" placeholder="+92 xxx xxx xxxx"></div>
+        <div class="form-group"><label>City</label><select id="sh-city" onchange="updateOrderSummary()"><option value="" disabled selected>Select your city</option><option value="Rawalpindi">Rawalpindi</option><option value="Islamabad">Islamabad</option><option value="Lahore">Lahore</option><option value="Karachi">Karachi</option><option value="Faisalabad">Faisalabad</option><option value="Multan">Multan</option><option value="Peshawar">Peshawar</option><option value="Other">Other City</option></select></div>
+        <div class="form-group"><label>Complete Delivery Address</label><input type="text" id="sh-address" placeholder="House No, Street, Area, City"></div>
+        <div class="form-group"><label>Special Instructions (Optional)</label><input type="text" id="sh-notes" placeholder="e.g. Gift wrapping, specific colour note..."></div>
+      </div>
+      <div class="checkout-section">
+        <div class="checkout-section-title"><i class="fas fa-credit-card"></i> Payment Method</div>
+        <div class="payment-methods">
+          <div class="pay-method selected" onclick="selectPay(this,'COD')"><i class="fas fa-money-bill-wave pay-icon"></i><span>Cash on Delivery</span></div>
+          <div class="pay-method" onclick="selectPay(this,'EasyPaisa')"><div class="pay-icon" style="font-size:13px;font-weight:700;color:var(--rose);line-height:1.2;">Easy<br>Paisa</div><span>EasyPaisa</span></div>
+          <div class="pay-method" onclick="selectPay(this,'JazzCash')"><div class="pay-icon" style="font-size:13px;font-weight:700;color:var(--rose);line-height:1.2;">Jazz<br>Cash</div><span>JazzCash</span></div>
+          <div class="pay-method" onclick="selectPay(this,'Bank Transfer')"><i class="fas fa-university pay-icon"></i><span>Bank Transfer</span></div>
+        </div>
+      </div>
+      <div class="checkout-section">
+        <div class="checkout-section-title"><i class="fas fa-receipt"></i> Order Summary</div>
+        <div class="order-summary-box">
+          <ul id="order-items-list"></ul>
+          <div class="order-sum-line"><span>Subtotal</span><span id="sum-subtotal">Rs. 0</span></div>
+          <div class="order-sum-line discount" id="sum-bulk-row" style="display:none;"><span id="sum-bulk-label">Bulk Discount</span><span id="sum-bulk-amt">- Rs. 0</span></div>
+          <div class="order-sum-line" id="sum-delivery-row"><span>Delivery Charges</span><span id="sum-delivery-amt">Rs. 0</span></div>
+          <div class="order-total"><span>Total</span><span id="checkout-total">Rs. 0</span></div>
+          <div class="delivery-note-box" id="delivery-note-box"><strong>📦 Delivery:</strong> Select your city above to see estimated delivery charges. Free delivery on orders over Rs. 3,000. <strong>🎁 Bulk Discount:</strong> Order 5+ pieces and get 10% off automatically.</div>
+          <div class="min-order-warning" id="min-order-warning">⚠️ Minimum order amount is Rs. 500. Please add more items to proceed.</div>
+        </div>
+      </div>
+      <button class="btn-complete" onclick="completeOrder()"><i class="fab fa-whatsapp"></i> Confirm Order via WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- RECEIPT -->
+<div class="receipt-overlay" id="receiptOverlay">
+  <div class="receipt-box" id="receiptBox">
+    <div class="receipt-header">
+      <span class="receipt-logo">Abdullah Bangles</span>
+      <span class="receipt-tagline">Curating Elegance Since 2010</span>
+    </div>
+    <div class="receipt-thanks">
+      <span class="thanks-emoji">🎉</span>
+      <h3>Shukriya! Order Placed!</h3>
+      <p>Your order has been sent to our team</p>
+    </div>
+    <div class="receipt-title">🧾 ORDER RECEIPT / BILL</div>
+    <div class="receipt-body">
+      <div class="receipt-row"><span class="label">Order ID</span><span class="val receipt-order-id" id="r-order-id">#AB-000000</span></div>
+      <div class="receipt-row"><span class="label">Status</span><span class="val"><span class="receipt-status-badge">✓ Confirmed</span></span></div>
+      <div class="receipt-row"><span class="label">Date & Time</span><span class="val" id="r-datetime">—</span></div>
+      <hr class="receipt-divider">
+      <div class="receipt-row"><span class="label">Customer</span><span class="val" id="r-name">—</span></div>
+      <div class="receipt-row"><span class="label">WhatsApp</span><span class="val" id="r-phone">—</span></div>
+      <div class="receipt-row"><span class="label">City</span><span class="val" id="r-city">—</span></div>
+      <div class="receipt-row"><span class="label">Address</span><span class="val" id="r-address">—</span></div>
+      <div class="receipt-row"><span class="label">Payment</span><span class="val" id="r-payment">—</span></div>
+      <div class="receipt-row" id="r-notes-row" style="display:none;"><span class="label">Note</span><span class="val" id="r-notes">—</span></div>
+      <hr class="receipt-divider">
+      <div class="receipt-items-title">📦 Items Ordered</div>
+      <div id="r-items-list"></div>
+      <div class="receipt-row"><span class="label">Subtotal</span><span class="val" id="r-subtotal">Rs. 0</span></div>
+      <div class="receipt-row" id="r-bulk-row" style="display:none;"><span class="label">Bulk Discount</span><span class="val" id="r-bulk">- Rs. 0</span></div>
+      <div class="receipt-row"><span class="label">Delivery</span><span class="val" id="r-delivery">Rs. 0</span></div>
+      <div class="receipt-total-box">
+        <span class="total-label">Total Amount</span>
+        <span class="total-amt" id="r-total">Rs. 0</span>
+      </div>
+    </div>
+    <div class="receipt-note">
+      ⚠️ Delivery charges shown are estimates and will be finally confirmed via WhatsApp.<br>
+      Our team will contact you within 1–2 hours to confirm your order.<br>
+      📞 <strong>+92 323 506 3462</strong> &nbsp;|&nbsp; Pirwadhai, Rawalpindi
+    </div>
+    <div class="receipt-footer">
+      Thank you for shopping with Abdullah Bangles ♥<br>
+      آپ کا شکریہ — آپ کا آرڈر موصول ہو گیا ہے
+    </div>
+    <div class="receipt-actions">
+      <button class="btn-save-receipt" onclick="saveReceipt()"><i class="fas fa-print"></i> Print / Save Receipt</button>
+      <button class="btn-close-receipt" onclick="closeReceipt()"><i class="fas fa-times"></i> Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/923235063462?text=Assalam%20o%20Alaikum!%20I%20want%20to%20inquire%20about%20your%20bangles%20collection." target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+const PRODUCTS = [
+  {id:1,  name:'Nori Bangle',              cat:'Bangles',   price:500,  pieces:2,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/1.JPG',       type:'bangle'},
+  {id:2,  name:'Bridal Gajra',             cat:'Bangles',   price:1000, pieces:null,img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/10.JPG',      type:'bangle'},
+  {id:3,  name:'Kashmiri Bangles',         cat:'Bangles',   price:600,  pieces:null,img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/11.JPG',      type:'bangle'},
+  {id:4,  name:'Crack Beats',              cat:'Bangles',   price:700,  pieces:6,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/12.JPG',      type:'bangle'},
+  {id:5,  name:'Designer Crystal Wedding', cat:'Bracelets', price:700,  pieces:1,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/2.JPG',       type:'bracelet'},
+  {id:6,  name:'Anarkali Moti',            cat:'Bangles',   price:400,  pieces:2,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/3.JPG',       type:'bangle'},
+  {id:7,  name:'Shine Bubble',             cat:'Bangles',   price:500,  pieces:2,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/4.JPG',       type:'bangle'},
+  {id:8,  name:'Simple Bubble',            cat:'Bangles',   price:400,  pieces:2,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/5.JPG',       type:'bangle'},
+  {id:9,  name:'Crystal Kashmiri',         cat:'Bangles',   price:500,  pieces:4,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/6.JPG',       type:'bangle'},
+  {id:10, name:'Moti Lace',                cat:'Bangles',   price:500,  pieces:6,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/7.JPG',       type:'bangle'},
+  {id:11, name:'Grey Steel Gajra',         cat:'Bangles',   price:600,  pieces:null,img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/8.JPG',       type:'bangle'},
+  {id:12, name:'Shine Flower',             cat:'Bracelets', price:600,  pieces:1,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/9.JPG',       type:'bracelet'},
+  {id:13, name:'Simple Flowers',           cat:'Bracelets', price:700,  pieces:2,   img:'https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/Capture.JPG', type:'bracelet'},
+  {id:14, name:'small pearls',             cat:'Bracelets', price:400,  pieces:2,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/pic%203%20.jpg.jfif', type:'bracelet'},
+  {id:15, name:'Rainbow Jewels',           cat:'Bracelets', price:700,  pieces:5,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/pic%202%20.jpg.jfif',type:'bracelet'},
+  {id:16, name:'Pearl Symphony',           cat:'Bracelets', price:400,  pieces:2,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/pic%201%20.jpg.jfif',type:'bracelet'},
+  {id:17, name:'Pearl blossom',            cat:'Bangles',   price:500,  pieces:5,   img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%204.jpg.png?raw=true',type:'bangle'},
+  {id:18, name:'Silver linen',             cat:'Bangles',   price:450,  pieces:12,  img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%205.jpg.jpeg?raw=true',type:'bangle'},
+  {id:19, name:'Ruby Royale ',             cat:'Bangles',   price:500,  pieces:6,   img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%206.jpg.png?raw=true',type:'bangle'},
+  {id:20, name:'Pearl Cascade',            cat:'Bracelets', price:500,  pieces:2,   img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%207.jpg.png?raw=true',type:'bracelet'},
+
+];
+
+function renderCard(p) {
+  const piecesTag = p.pieces ? `<div class="pc-pieces">${p.pieces} Pcs</div>` : '';
+  return `<div class="product-card" onclick="openModal(${p.id})">
+    <div class="pc-img">
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      <div class="pc-badge in-stock">In Stock</div>
+      ${piecesTag}
+      <div class="pc-overlay">
+        <div class="pc-quick-btns">
+          <button class="pc-quick-btn" onclick="event.stopPropagation();openModal(${p.id})">Quick View</button>
+          <button class="pc-quick-btn outline" onclick="event.stopPropagation();quickAddToCart(${p.id})"><i class="fas fa-bag-shopping"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="pc-body">
+      <div class="pc-category">${p.cat}</div>
+      <div class="pc-name">${p.name}</div>
+      <div class="pc-price"><span class="pc-price-main">Rs. ${p.price.toLocaleString()}</span>${p.pieces?`<span style="font-size:11px;color:var(--muted);margin-left:6px;">(${p.pieces} pcs)</span>`:''}</div>
+      <div class="pc-stars">★★★★★ <span style="font-size:10px;color:var(--muted);margin-left:4px;">All colours available</span></div>
+    </div>
+  </div>`;
+}
+
+function renderGrid(gridId, list) {
+  const el = document.getElementById(gridId);
+  if (!list.length) {
+    el.innerHTML = `<div class="no-results"><i class="fas fa-search"></i>No products found. Try a different search term.</div>`;
+    return;
+  }
+  el.innerHTML = list.map(renderCard).join('');
+}
+
+function filterAndRender(type) {
+  const searchId = type === 'bangle' ? 'bangles-search' : 'bracelets-search';
+  const sortId   = type === 'bangle' ? 'bangles-sort'   : 'bracelets-sort';
+  const gridId   = type === 'bangle' ? 'banglesGrid'    : 'braceletsGrid';
+  const searchVal = (document.getElementById(searchId).value || '').trim().toLowerCase();
+  const sortVal   = document.getElementById(sortId).value;
+
+  let list = PRODUCTS.filter(p => p.type === type);
+  if (searchVal) {
+    list = list.filter(p => p.name.toLowerCase().includes(searchVal) || p.cat.toLowerCase().includes(searchVal));
+  }
+  if (sortVal === 'price-asc')      list = [...list].sort((a,b) => a.price - b.price);
+  else if (sortVal === 'price-desc') list = [...list].sort((a,b) => b.price - a.price);
+  else if (sortVal === 'name-asc')   list = [...list].sort((a,b) => a.name.localeCompare(b.name));
+
+  renderGrid(gridId, list);
+}
+
+document.getElementById('featuredGrid').innerHTML  = PRODUCTS.slice(0,4).map(renderCard).join('');
+document.getElementById('banglesGrid').innerHTML   = PRODUCTS.filter(p=>p.type==='bangle').map(renderCard).join('');
+document.getElementById('braceletsGrid').innerHTML = PRODUCTS.filter(p=>p.type==='bracelet').map(renderCard).join('');
+
+let cart = [];
+let currentPayMethod = 'COD';
+let currentModalId   = null;
+let currentModalSize = '2.4';
+let currentModalColour = 'Golden';
+let currentModalQty  = 1;
+
+/* ══ DELIVERY & BULK DISCOUNT CONFIG ══ */
+const DELIVERY_RATES = {
+  'Rawalpindi': 0,
+  'Islamabad': 0,
+  'Lahore': 250,
+  'Karachi': 300,
+  'Faisalabad': 250,
+  'Multan': 250,
+  'Peshawar': 250,
+  'Other': 300
+};
+const FREE_DELIVERY_THRESHOLD = 3000;
+const BULK_QTY_THRESHOLD = 5;
+const BULK_DISCOUNT_PERCENT = 10;
+const MIN_ORDER_AMOUNT = 500;
+
+function getCartTotal() { return cart.reduce((s,i)=>s+i.price*i.qty,0); }
+function getCartQty() { return cart.reduce((s,i)=>s+i.qty,0); }
+
+function getDeliveryCharge(subtotal, city) {
+  if (subtotal >= FREE_DELIVERY_THRESHOLD) return 0;
+  if (!city) return null;
+  return DELIVERY_RATES.hasOwnProperty(city) ? DELIVERY_RATES[city] : DELIVERY_RATES['Other'];
+}
+
+function getBulkDiscount(subtotal, qty) {
+  if (qty >= BULK_QTY_THRESHOLD) return Math.round(subtotal * BULK_DISCOUNT_PERCENT / 100);
+  return 0;
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartBadge').textContent = total;
+  const itemsEl = document.getElementById('cartItems');
+  if(cart.length===0){
+    itemsEl.innerHTML='<div class="empty-cart"><i class="fas fa-shopping-bag"></i><p>Your bag is empty</p></div>';
+  } else {
+    itemsEl.innerHTML = cart.map(i=>`
+      <div class="cart-item">
+        <img class="cart-item-img" src="${i.img}" alt="${i.name}">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${i.name}</div>
+          <div class="cart-item-size">Size: ${i.size} | Colour: ${i.colour} | Qty: ${i.qty}</div>
+          <div class="cart-item-price">Rs. ${(i.price*i.qty).toLocaleString()}</div>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart('${i.cartId}')"><i class="fas fa-trash-alt"></i></button>
+      </div>`).join('');
+  }
+  document.getElementById('cartTotal').textContent = 'Rs. ' + getCartTotal().toLocaleString();
+}
+
+function addToCart(productId, size, colour, qty) {
+  const p = PRODUCTS.find(x=>x.id===productId);
+  if(!p) return;
+  qty = qty || 1;
+  const cartId = productId+'-'+size+'-'+colour;
+  const existing = cart.find(i=>i.cartId===cartId);
+  if(existing){ existing.qty += qty; } else { cart.push({cartId,id:p.id,name:p.name,price:p.price,img:p.img,size,colour,qty,pieces:p.pieces}); }
+  updateCartUI();
+  toggleCart(true);
+}
+
+function quickAddToCart(productId) { addToCart(productId, '2.6', 'Golden', 1); }
+function removeFromCart(cartId){ cart=cart.filter(i=>i.cartId!==cartId); updateCartUI(); }
+function toggleCart(forceOpen){ const s=document.getElementById('cartSidebar'); if(forceOpen)s.classList.add('open'); else s.classList.toggle('open'); }
+
+function openModal(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  currentModalId=id; currentModalSize='2.4'; currentModalColour='Golden'; currentModalQty=1;
+  document.getElementById('modal-img').src=p.img;
+  document.getElementById('modal-cat').textContent=p.cat;
+  document.getElementById('modal-name').textContent=p.name;
+  document.getElementById('modal-price').textContent='Rs. '+p.price.toLocaleString();
+  document.getElementById('modal-qty').textContent='1';
+  const pEl = document.getElementById('modal-pieces-info');
+  pEl.textContent = p.pieces ? `📦 This product comes as a set of ${p.pieces} pieces` : '';
+  document.querySelectorAll('.size-opt').forEach((el,i)=>el.classList.toggle('active',i===0));
+  document.querySelectorAll('.colour-opt').forEach((el,i)=>el.classList.toggle('active',i===0));
+  document.getElementById('productModal').classList.add('open');
+}
+function closeModal(){ document.getElementById('productModal').classList.remove('open'); }
+function selectSize(el){ document.querySelectorAll('.size-opt').forEach(e=>e.classList.remove('active')); el.classList.add('active'); currentModalSize=el.textContent; }
+function selectColour(el){ document.querySelectorAll('.colour-opt').forEach(e=>e.classList.remove('active')); el.classList.add('active'); currentModalColour=el.textContent; }
+function changeQty(delta){ currentModalQty=Math.max(1,currentModalQty+delta); document.getElementById('modal-qty').textContent=currentModalQty; }
+function addToCartFromModal(){ if(currentModalId){ addToCart(currentModalId,currentModalSize,currentModalColour,currentModalQty); closeModal(); } }
+function buyNow(){ if(currentModalId){ addToCart(currentModalId,currentModalSize,currentModalColour,currentModalQty); closeModal(); openCheckout(); } }
+
+function openCheckout(){
+  document.getElementById('cartSidebar').classList.remove('open');
+  const list=document.getElementById('order-items-list');
+  list.innerHTML=cart.map(i=>`<li><span>${i.name} (${i.size}, ${i.colour}) ×${i.qty}</span><span>Rs. ${(i.price*i.qty).toLocaleString()}</span></li>`).join('')||'<li><span>No items</span><span>—</span></li>';
+  document.getElementById('checkoutOverlay').classList.add('open');
+  updateOrderSummary();
+}
+function closeCheckout(){ document.getElementById('checkoutOverlay').classList.remove('open'); }
+function selectPay(el,method){ document.querySelectorAll('.pay-method').forEach(e=>e.classList.remove('selected')); el.classList.add('selected'); currentPayMethod=method; }
+
+function updateOrderSummary(){
+  const subtotal = getCartTotal();
+  const qty = getCartQty();
+  const city = document.getElementById('sh-city') ? document.getElementById('sh-city').value : '';
+  const bulkDiscount = getBulkDiscount(subtotal, qty);
+  const discountedSubtotal = subtotal - bulkDiscount;
+  const delivery = getDeliveryCharge(discountedSubtotal, city);
+  const deliveryDisplay = delivery === null ? null : delivery;
+  const total = discountedSubtotal + (deliveryDisplay || 0);
+
+  document.getElementById('sum-subtotal').textContent = 'Rs. ' + subtotal.toLocaleString();
+
+  const bulkRow = document.getElementById('sum-bulk-row');
+  if (bulkDiscount > 0) {
+    bulkRow.style.display = 'flex';
+    document.getElementById('sum-bulk-label').textContent = `Bulk Discount (${BULK_DISCOUNT_PERCENT}% off, ${qty} pcs)`;
+    document.getElementById('sum-bulk-amt').textContent = '- Rs. ' + bulkDiscount.toLocaleString();
+  } else {
+    bulkRow.style.display = 'none';
+  }
+
+  const deliveryAmtEl = document.getElementById('sum-delivery-amt');
+  if (discountedSubtotal >= FREE_DELIVERY_THRESHOLD) {
+    deliveryAmtEl.textContent = 'FREE';
+    deliveryAmtEl.parentElement.classList.add('free');
+  } else {
+    deliveryAmtEl.parentElement.classList.remove('free');
+    deliveryAmtEl.textContent = city ? 'Rs. ' + (deliveryDisplay||0).toLocaleString() : 'Select city →';
+  }
+
+  document.getElementById('checkout-total').textContent = 'Rs. ' + total.toLocaleString();
+
+  const warnEl = document.getElementById('min-order-warning');
+  if (subtotal > 0 && subtotal < MIN_ORDER_AMOUNT) {
+    warnEl.classList.add('show');
+  } else {
+    warnEl.classList.remove('show');
+  }
+}
+
+function saveOrderToLocalStorage(orderRecord){
+  try {
+    const existing = JSON.parse(localStorage.getItem('ab_orders') || '[]');
+    existing.push(orderRecord);
+    localStorage.setItem('ab_orders', JSON.stringify(existing));
+  } catch(e) {
+    console.warn('Could not save order locally:', e);
+  }
+}
+
+function completeOrder(){
+  const name    = document.getElementById('sh-name').value.trim();
+  const phone   = document.getElementById('sh-phone').value.trim();
+  const city    = document.getElementById('sh-city').value;
+  const address = document.getElementById('sh-address').value.trim();
+  const notes   = document.getElementById('sh-notes').value.trim();
+  if(!name||!phone||!address){ alert('Please fill in your Name, WhatsApp Number and Address.'); return; }
+  if(!city){ alert('Please select your city so we can calculate delivery charges.'); return; }
+  const subtotal = getCartTotal();
+  if(subtotal < MIN_ORDER_AMOUNT){ alert('Minimum order amount is Rs. '+MIN_ORDER_AMOUNT+'. Please add more items to proceed.'); return; }
+
+  const qty = getCartQty();
+  const bulkDiscount = getBulkDiscount(subtotal, qty);
+  const discountedSubtotal = subtotal - bulkDiscount;
+  const delivery = getDeliveryCharge(discountedSubtotal, city) || 0;
+  const grandTotal = discountedSubtotal + delivery;
+
+  const orderId = '#AB-' + Date.now().toString().slice(-6);
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-PK',{day:'2-digit',month:'short',year:'numeric'}) + ' — ' + now.toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'});
+  const itemsText = cart.map(i=>`• ${i.name} (Size: ${i.size}, Colour: ${i.colour}) × ${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}`).join('\n');
+  const subtotalAmt = 'Rs. ' + subtotal.toLocaleString();
+  const bulkText = bulkDiscount>0 ? `🎁 Bulk Discount (${BULK_DISCOUNT_PERCENT}% off, ${qty} pcs): - Rs. ${bulkDiscount.toLocaleString()}\n` : '';
+  const deliveryText = delivery===0 ? 'FREE' : 'Rs. ' + delivery.toLocaleString();
+  const totalAmt  = 'Rs. ' + grandTotal.toLocaleString();
+
+  const ownerMsg =
+    `🔔 *NEW ORDER — Abdullah Bangles*\n\n` +
+    `🆔 Order ID: *${orderId}*\n📅 Date: ${dateStr}\n\n` +
+    `👤 *Customer Details*\nName: ${name}\n📞 WhatsApp: ${phone}\n🏙️ City: ${city}\n🏠 Address: ${address}\n` +
+    (notes ? `📝 Note: ${notes}\n` : '') +
+    `\n💳 Payment: *${currentPayMethod}*\n\n🛍️ *Order Items:*\n${itemsText}\n\n` +
+    `Subtotal: ${subtotalAmt}\n${bulkText}🚚 Delivery: ${deliveryText}\n💰 *Total: ${totalAmt}*`;
+
+  const customerMsg =
+    `🎉 *Order Confirmed — Abdullah Bangles*\n\nShukriya ${name}! Aap ka order mil gaya hai. ❤️\n\n` +
+    `🧾 *Aap ki Receipt / Bill*\n━━━━━━━━━━━━━━━━━━\n` +
+    `🆔 Order ID: *${orderId}*\n📅 ${dateStr}\n━━━━━━━━━━━━━━━━━━\n` +
+    `👤 Name: ${name}\n📞 WhatsApp: ${phone}\n🏙️ City: ${city}\n🏠 Address: ${address}\n💳 Payment: ${currentPayMethod}\n` +
+    `━━━━━━━━━━━━━━━━━━\n📦 *Items:*\n${itemsText}\n━━━━━━━━━━━━━━━━━━\n` +
+    `Subtotal: ${subtotalAmt}\n${bulkText}🚚 Delivery: ${deliveryText}\n` +
+    `💰 *Total: ${totalAmt}*\n\n` +
+    `Hamari team aap se 1-2 ghante mein rabta karegi. Shukriya! 🙏\n📞 Abdullah Bangles: +92 323 506 3462`;
+
+  saveOrderToLocalStorage({
+    orderId, date: now.toISOString(), name, phone, city, address, notes,
+    payment: currentPayMethod, items: cart.map(i=>({name:i.name,size:i.size,colour:i.colour,qty:i.qty,price:i.price})),
+    subtotal, bulkDiscount, delivery, total: grandTotal
+  });
+
+  window.open('https://wa.me/923235063462?text='+encodeURIComponent(ownerMsg),'_blank');
+  setTimeout(()=>{
+    const cleanPhone = phone.replace(/[\s\-\(\)]/g,'').replace(/^0/,'92');
+    window.open('https://wa.me/'+cleanPhone+'?text='+encodeURIComponent(customerMsg),'_blank');
+  }, 1500);
+
+  document.getElementById('r-order-id').textContent = orderId;
+  document.getElementById('r-datetime').textContent = dateStr;
+  document.getElementById('r-name').textContent     = name;
+  document.getElementById('r-phone').textContent    = phone;
+  document.getElementById('r-city').textContent     = city;
+  document.getElementById('r-address').textContent  = address;
+  document.getElementById('r-payment').textContent  = currentPayMethod;
+  if(notes){ document.getElementById('r-notes-row').style.display='flex'; document.getElementById('r-notes').textContent=notes; }
+  document.getElementById('r-items-list').innerHTML = cart.map(i=>`
+    <div class="receipt-item-row">
+      <span>${i.name} (${i.size}, ${i.colour}) × ${i.qty}${i.pieces?' ['+i.pieces+' pcs set]':''}</span>
+      <span><strong>Rs. ${(i.price*i.qty).toLocaleString()}</strong></span>
+    </div>`).join('');
+  document.getElementById('r-subtotal').textContent = subtotalAmt;
+  if (bulkDiscount > 0) {
+    document.getElementById('r-bulk-row').style.display='flex';
+    document.getElementById('r-bulk').textContent = '- Rs. ' + bulkDiscount.toLocaleString();
+  } else {
+    document.getElementById('r-bulk-row').style.display='none';
+  }
+  document.getElementById('r-delivery').textContent = deliveryText;
+  document.getElementById('r-total').textContent = totalAmt;
+  cart=[];
+  updateCartUI();
+  closeCheckout();
+  document.getElementById('receiptOverlay').classList.add('open');
+}
+
+function saveReceipt(){
+  const html = document.getElementById('receiptBox').innerHTML;
+  const win = window.open('','_blank','width=540,height=750');
+  win.document.write(`<!DOCTYPE html><html><head>
+    <meta charset="UTF-8"><title>Abdullah Bangles — Order Receipt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Raleway',sans-serif;background:#fff;color:#1a1a1a;}
+      .receipt-header{background:#0f3828;color:#fff;padding:28px 32px;text-align:center;}
+      .receipt-logo{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:3px;color:#e8bfa0;text-transform:uppercase;display:block;margin-bottom:4px;}
+      .receipt-tagline{font-size:10px;letter-spacing:3px;color:#7a9080;text-transform:uppercase;}
+      .receipt-thanks{background:linear-gradient(135deg,#c9956e,#a06b44);color:#000;text-align:center;padding:18px 20px;}
+      .receipt-thanks .thanks-emoji{font-size:28px;margin-bottom:6px;display:block;}
+      .receipt-thanks h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:4px;}
+      .receipt-thanks p{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.8;}
+      .receipt-title{background:#0f3828;color:#e8bfa0;text-align:center;padding:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;}
+      .receipt-body{padding:24px 28px;}
+      .receipt-row{display:flex;justify-content:space-between;align-items:flex-start;font-size:13px;padding:8px 0;border-bottom:1px dashed #e8e8e8;color:#333;}
+      .receipt-row .label{color:#999;font-size:11px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0;margin-right:10px;}
+      .receipt-row .val{font-weight:600;color:#1a1a1a;text-align:right;max-width:65%;}
+      hr{border:none;border-top:2px dashed #e0e0e0;margin:16px 0;}
+      .receipt-items-title{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#a06b44;font-weight:700;margin-bottom:12px;}
+      .receipt-item-row{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid #f5f5f5;color:#333;}
+      .receipt-total-box{background:#0f3828;color:#fff;padding:16px 22px;margin:18px -4px 0;display:flex;justify-content:space-between;align-items:center;}
+      .total-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#7a9080;}
+      .total-amt{font-family:'Playfair Display',serif;font-size:26px;color:#e8bfa0;}
+      .receipt-note{font-size:11px;color:#888;text-align:center;padding:14px 22px;background:#fafafa;border-top:1px solid #eee;line-height:1.7;}
+      .receipt-footer{background:#0f3828;color:#7a9080;font-size:10px;text-align:center;padding:14px;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;}
+      .receipt-order-id{font-family:'Playfair Display',serif;font-size:20px;color:#a06b44;font-weight:600;}
+      .receipt-status-badge{display:inline-block;background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid #c8e6c9;}
+      .receipt-actions{display:none !important;}
+    </style>
+  </head><body>${html}</body></html>`);
+  win.document.close();
+  setTimeout(()=>{ win.focus(); win.print(); },700);
+}
+
+function closeReceipt(){
+  document.getElementById('receiptOverlay').classList.remove('open');
+  document.getElementById('r-notes-row').style.display='none';
+  showSection('home');
+}
+
+function sendContactWA(){
+  const name=document.getElementById('c-name').value.trim();
+  const email=document.getElementById('c-email').value.trim();
+  const phone=document.getElementById('c-phone').value.trim();
+  const subject=document.getElementById('c-subject').value;
+  const msg=document.getElementById('c-msg').value.trim();
+  if(!name||!msg){ alert('Please fill in your name and message.'); return; }
+  const text=`Assalam o Alaikum!\n\n👤 Name: ${name}\n📧 Email: ${email||'N/A'}\n📞 Phone: ${phone||'N/A'}\n📌 Subject: ${subject||'N/A'}\n\n💬 Message:\n${msg}`;
+  window.open('https://wa.me/923235063462?text='+encodeURIComponent(text),'_blank');
+}
+
+function showSection(id){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const sec=document.getElementById('sec-'+id);
+  if(sec) sec.classList.add('active');
+  const nl=document.getElementById('nl-'+id);
+  if(nl) nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeMob(){ document.getElementById('mobNav').classList.remove('open'); }
+
+function toggleFaq(btn){
+  const ans=btn.nextElementSibling;
+  const isOpen=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){ ans.classList.add('open'); btn.classList.add('open'); }
+}
+
+document.getElementById('productModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.getElementById('checkoutOverlay').addEventListener('click',function(e){if(e.target===this)closeCheckout();});
+document.getElementById('receiptOverlay').addEventListener('click',function(e){if(e.target===this)closeReceipt();});
+</script>
+</body>
+</html>

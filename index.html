@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -366,14 +365,21 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
 .no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);}
 .no-results i{font-size:40px;margin-bottom:14px;color:var(--border);display:block;}
 
-/* DELIVERY / BULK DISCOUNT UI */
-.delivery-note-box{background:rgba(26,92,69,.12);border:1px solid rgba(201,149,110,.2);padding:14px 16px;font-size:12px;color:var(--muted);margin-top:10px;line-height:1.7;}
-.delivery-note-box strong{color:var(--rose-lt);}
-.order-sum-line{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:5px 0;}
-.order-sum-line.discount{color:#4fae7a;}
-.order-sum-line.free{color:#4fae7a;font-weight:700;}
-.min-order-warning{background:rgba(200,80,60,.12);border:1px solid rgba(200,80,60,.35);color:#e08a75;font-size:12px;padding:12px 16px;margin-top:10px;display:none;}
-.min-order-warning.show{display:block;}
+/* FEATURED — CHIPS + BENTO SHOWCASE */
+.featured-chips{display:flex;gap:10px;justify-content:center;margin-bottom:44px;flex-wrap:wrap;}
+.featured-chip{padding:10px 24px;border:1px solid var(--border);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:600;cursor:pointer;background:transparent;transition:.3s;font-family:'Raleway',sans-serif;}
+.featured-chip:hover{border-color:rgba(201,149,110,.5);color:var(--rose-lt);}
+.featured-chip.active{border-color:var(--rose);color:#000;background:var(--rose);}
+.featured-bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:20px;}
+.featured-bento .product-card:first-child{grid-column:span 2;grid-row:span 2;}
+.featured-bento .product-card:first-child .pc-img{height:100%;}
+.featured-bento .product-card:first-child .pc-body{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(8,14,10,.96) 20%,transparent 100%);padding-top:60px;}
+.featured-bento .product-card:first-child{position:relative;}
+.featured-bento .product-card:first-child .pc-name{font-size:24px;}
+.featured-bento .product-card:first-child .pc-price-main{font-size:22px;}
+.featured-bento .product-card:first-child .spotlight-tag{position:absolute;top:14px;left:14px;background:var(--rose);color:#000;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 12px;z-index:3;}
+@media(max-width:900px){.featured-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px;}.featured-bento .product-card:first-child{grid-column:span 2;grid-row:span 1;height:280px;}}
+@media(max-width:600px){.featured-bento{grid-template-columns:1fr;}.featured-bento .product-card:first-child{grid-column:span 1;height:260px;}}
 
 /* RESPONSIVE */
 @media(max-width:1200px){.products-grid{grid-template-columns:repeat(3,1fr);}.why-grid{grid-template-columns:repeat(2,1fr);}.foot-grid{grid-template-columns:1fr 1fr;gap:40px;}.featured-band-inner{grid-template-columns:1fr;gap:50px;}.fb-img-wrap img{height:380px;}}
@@ -412,6 +418,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
       <li><a id="nl-home" class="active" onclick="showSection('home')">Home</a></li>
       <li><a id="nl-bangles" onclick="showSection('bangles')">Bangles</a></li>
       <li><a id="nl-bracelets" onclick="showSection('bracelets')">Bracelets</a></li>
+      <li><a id="nl-jewellery" onclick="showSection('jewellery')">Jewellery</a></li>
       <li><a id="nl-about" onclick="showSection('about')">About</a></li>
       <li><a id="nl-contact" onclick="showSection('contact')">Contact</a></li>
       <li><a onclick="showSection('returns')">Returns</a></li>
@@ -439,6 +446,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
   <a onclick="showSection('home');closeMob()">Home</a>
   <a onclick="showSection('bangles');closeMob()">Bangles</a>
   <a onclick="showSection('bracelets');closeMob()">Bracelets</a>
+  <a onclick="showSection('jewellery');closeMob()">Jewellery</a>
   <a onclick="showSection('about');closeMob()">About</a>
   <a onclick="showSection('contact');closeMob()">Contact</a>
   <a onclick="showSection('returns');closeMob()">Return Policy</a>
@@ -455,7 +463,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
       <div class="hero-left">
         <span class="hero-label">Handcrafted Jewellery</span>
         <h1>Timeless Beauty,<br><em>Modern Craft</em></h1>
-        <p class="hero-sub">Discover our handpicked collection of bangles and bracelets — where tradition meets contemporary elegance.</p>
+        <p class="hero-sub">Discover our handpicked collection of bangles, bracelets and fine jewellery — where tradition meets contemporary elegance.</p>
         <div class="hero-btns">
           <button class="btn-primary" onclick="showSection('bangles')">Explore Collection</button>
           <button class="btn-outline" onclick="showSection('about')">Our Heritage</button>
@@ -472,7 +480,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <img class="showcase-center-img" src="https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/10.JPG" alt="Bangles Collection">
           <div class="showcase-float showcase-float-1">
             <div class="sf-label">In Stock</div>
-            <div class="sf-val">13+</div>
+            <div class="sf-val">18+</div>
             <div class="sf-sub">Designs Available</div>
           </div>
           <div class="showcase-float showcase-float-2">
@@ -488,7 +496,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
   <div class="stats-strip">
     <div class="stat-item"><div class="stat-num">14+</div><div class="stat-lbl">Years of Trust</div></div>
     <div class="stat-item"><div class="stat-num">5000+</div><div class="stat-lbl">Happy Customers</div></div>
-    <div class="stat-item"><div class="stat-num">13+</div><div class="stat-lbl">Unique Designs</div></div>
+    <div class="stat-item"><div class="stat-num">18+</div><div class="stat-lbl">Unique Designs</div></div>
     <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Authentic Quality</div></div>
   </div>
 
@@ -499,7 +507,13 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
         <h2>Featured Collection</h2>
         <p>Our most loved pieces, crafted with exceptional care and precision</p>
       </div>
-      <div class="products-grid" id="featuredGrid"></div>
+      <div class="featured-chips" id="featuredChips">
+        <button class="featured-chip active" onclick="setFeaturedFilter('all', this)">All</button>
+        <button class="featured-chip" onclick="setFeaturedFilter('bangle', this)">Bangles</button>
+        <button class="featured-chip" onclick="setFeaturedFilter('bracelet', this)">Bracelets</button>
+        <button class="featured-chip" onclick="setFeaturedFilter('jewellery', this)">Jewellery</button>
+      </div>
+      <div class="products-grid featured-bento" id="featuredGrid"></div>
       <div style="text-align:center;margin-top:48px;">
         <button class="btn-primary" onclick="showSection('bangles')">View All Bangles</button>
       </div>
@@ -556,7 +570,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -570,6 +584,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <li><a onclick="showSection('home')">Home</a></li>
           <li><a onclick="showSection('bangles')">Bangles</a></li>
           <li><a onclick="showSection('bracelets')">Bracelets</a></li>
+          <li><a onclick="showSection('jewellery')">Jewellery</a></li>
           <li><a onclick="showSection('about')">About Us</a></li>
         </ul>
       </div>
@@ -619,7 +634,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -627,7 +642,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -658,7 +673,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -666,7 +681,46 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
+      <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
+    </div>
+    <div class="foot-bar">© 2026 ABDULLAH BANGLES. ALL RIGHTS RESERVED. HANDCRAFTED WITH ♥ IN RAWALPINDI</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ JEWELLERY ═══════════════ -->
+<div class="page-section" id="sec-jewellery">
+  <section class="section" style="background:var(--bg);padding-top:130px;">
+    <div class="sec-inner">
+      <div class="sec-head"><span class="sec-eyebrow">Jewellery Collection</span><h2>Fine Jewellery</h2><p>Necklaces, earrings, rings and sets for every celebration</p></div>
+      <div class="search-sort-bar">
+        <div class="search-box"><i class="fas fa-search"></i><input type="text" id="jewellery-search" placeholder="Search jewellery by name..." oninput="filterAndRender('jewellery')"></div>
+        <div class="sort-box">
+          <select id="jewellery-sort" onchange="filterAndRender('jewellery')">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A-Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="jewelleryGrid"></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="foot-brand">Abdullah Bangles</span>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -684,7 +738,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <span class="sec-eyebrow">Our Heritage</span>
           <h2>A Family Legacy of <em>Elegance</em></h2>
           <p style="margin-top:20px;">Founded in 2010, Abdullah Bangles began as a family atelier dedicated to traditional jewellery making in Pirwadhai, Rawalpindi.</p>
-          <p>Each piece is carefully selected and crafted with precision using premium materials. We combine time-honoured techniques with contemporary design to create bangles and bracelets that are truly special.</p>
+          <p>Each piece is carefully selected and crafted with precision using premium materials. We combine time-honoured techniques with contemporary design to create bangles, bracelets and jewellery that are truly special.</p>
           <div class="fb-feats" style="margin-top:28px;">
             <div class="fb-feat"><i class="fas fa-check-circle"></i> Family Business Since 2010</div>
             <div class="fb-feat"><i class="fas fa-check-circle"></i> 100% Authentic Products</div>
@@ -699,7 +753,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -707,7 +761,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -749,7 +803,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -757,7 +811,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -781,7 +835,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -789,7 +843,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -827,7 +881,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -835,7 +889,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -864,7 +918,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
     <div class="foot-grid">
       <div class="foot-col">
         <span class="foot-brand">Abdullah Bangles</span>
-        <p>Exquisite handcrafted bangles and bracelets since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
+        <p>Exquisite handcrafted bangles, bracelets and jewellery since 2010. Bringing elegance and tradition to modern women across Pakistan.</p>
         <div class="socials">
           <a href="https://facebook.com" target="_blank" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
@@ -872,7 +926,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <a href="https://wa.me/923235063462" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul class="foot-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('bangles')">Bangles</a></li><li><a onclick="showSection('bracelets')">Bracelets</a></li><li><a onclick="showSection('jewellery')">Jewellery</a></li><li><a onclick="showSection('about')">About Us</a></li></ul></div>
       <div class="foot-col"><h4>Customer Care</h4><ul class="foot-links"><li><a onclick="showSection('returns')">Return Policy</a></li><li><a onclick="showSection('sizeguide')">Size Guide</a></li><li><a onclick="showSection('faqs')">FAQs</a></li><li><a onclick="showSection('contact')">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Contact Us</h4><ul class="foot-links"><li><a href="tel:+923235063462">+92 323 506 3462</a></li><li><a href="mailto:abdullahbangels153@gmail.com">abdullahbangels153@gmail.com</a></li><li><a>Pirwadhai, Rawalpindi</a></li><li><a>Mon–Sat: 10am – 8pm</a></li></ul></div>
     </div>
@@ -961,7 +1015,6 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <li>Double check your selected size and colour before placing the order — changes cannot be made after confirmation.</li>
           <li>Cash on Delivery (COD) orders: Payment is collected at the time of delivery. Please keep exact change ready.</li>
           <li>JazzCash / EasyPaisa / Bank Transfer: Send payment screenshot on WhatsApp after ordering.</li>
-          <li>Delivery charges will be confirmed via WhatsApp within 1–2 hours of placing the order.</li>
           <li>Provide a complete and accurate delivery address including city, area and nearest landmark.</li>
           <li>Orders placed after 6 PM will be processed the next working day.</li>
           <li>For custom orders or bulk purchases, WhatsApp us directly at +92 323 506 3462.</li>
@@ -990,9 +1043,8 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <ul id="order-items-list"></ul>
           <div class="order-sum-line"><span>Subtotal</span><span id="sum-subtotal">Rs. 0</span></div>
           <div class="order-sum-line discount" id="sum-bulk-row" style="display:none;"><span id="sum-bulk-label">Bulk Discount</span><span id="sum-bulk-amt">- Rs. 0</span></div>
-          <div class="order-sum-line" id="sum-delivery-row"><span>Delivery Charges</span><span id="sum-delivery-amt">Rs. 0</span></div>
           <div class="order-total"><span>Total</span><span id="checkout-total">Rs. 0</span></div>
-          <div class="delivery-note-box" id="delivery-note-box"><strong>📦 Delivery:</strong> Select your city above to see estimated delivery charges. Free delivery on orders over Rs. 3,000. <strong>🎁 Bulk Discount:</strong> Order 5+ pieces and get 10% off automatically.</div>
+          <div class="delivery-note-box" id="delivery-note-box"><strong>🎁 Bulk Discount:</strong> Order 5+ pieces and get 10% off automatically. Delivery charges (if any) will be confirmed by our team on WhatsApp after you place the order.</div>
           <div class="min-order-warning" id="min-order-warning">⚠️ Minimum order amount is Rs. 500. Please add more items to proceed.</div>
         </div>
       </div>
@@ -1030,14 +1082,13 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
       <div id="r-items-list"></div>
       <div class="receipt-row"><span class="label">Subtotal</span><span class="val" id="r-subtotal">Rs. 0</span></div>
       <div class="receipt-row" id="r-bulk-row" style="display:none;"><span class="label">Bulk Discount</span><span class="val" id="r-bulk">- Rs. 0</span></div>
-      <div class="receipt-row"><span class="label">Delivery</span><span class="val" id="r-delivery">Rs. 0</span></div>
       <div class="receipt-total-box">
         <span class="total-label">Total Amount</span>
         <span class="total-amt" id="r-total">Rs. 0</span>
       </div>
     </div>
     <div class="receipt-note">
-      ⚠️ Delivery charges shown are estimates and will be finally confirmed via WhatsApp.<br>
+      ⚠️ Any applicable delivery charges will be confirmed via WhatsApp.<br>
       Our team will contact you within 1–2 hours to confirm your order.<br>
       📞 <strong>+92 323 506 3462</strong> &nbsp;|&nbsp; Pirwadhai, Rawalpindi
     </div>
@@ -1090,7 +1141,6 @@ const PRODUCTS = [
   {id:31, name:'Silver Frost Kangan Set',             cat:'Bangles',   price:500,  pieces:8,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2011.jpg.png',type:'bangle'},
   {id:32, name:'Chamak dhamak set ',             cat:'Bangles',   price:1000,  pieces:Full set,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2012.jpg.png',type:'bangle'},
   {id:33, name:'Pastel Prisim BANGLES ',             cat:'Bangles',   price:450,  pieces:12,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2013.jpg.png',type:'bangle'},
-  
 ];
 
 function renderCard(p) {
@@ -1126,9 +1176,9 @@ function renderGrid(gridId, list) {
 }
 
 function filterAndRender(type) {
-  const searchId = type === 'bangle' ? 'bangles-search' : 'bracelets-search';
-  const sortId   = type === 'bangle' ? 'bangles-sort'   : 'bracelets-sort';
-  const gridId   = type === 'bangle' ? 'banglesGrid'    : 'braceletsGrid';
+  const searchId = type === 'bangle' ? 'bangles-search' : (type === 'bracelet' ? 'bracelets-search' : 'jewellery-search');
+  const sortId   = type === 'bangle' ? 'bangles-sort'   : (type === 'bracelet' ? 'bracelets-sort'   : 'jewellery-sort');
+  const gridId   = type === 'bangle' ? 'banglesGrid'    : (type === 'bracelet' ? 'braceletsGrid'    : 'jewelleryGrid');
   const searchVal = (document.getElementById(searchId).value || '').trim().toLowerCase();
   const sortVal   = document.getElementById(sortId).value;
 
@@ -1143,9 +1193,28 @@ function filterAndRender(type) {
   renderGrid(gridId, list);
 }
 
-document.getElementById('featuredGrid').innerHTML  = PRODUCTS.slice(0,4).map(renderCard).join('');
+function renderFeaturedGrid(filterType){
+  const el = document.getElementById('featuredGrid');
+  let list = filterType==='all' ? PRODUCTS.slice(0,5) : PRODUCTS.filter(p=>p.type===filterType).slice(0,5);
+  if(!list.length){ el.innerHTML = `<div class="no-results"><i class="fas fa-search"></i>No products in this category yet.</div>`; return; }
+  el.innerHTML = list.map(renderCard).join('');
+  const first = el.querySelector('.product-card');
+  if(first){
+    const tag = document.createElement('div');
+    tag.className = 'spotlight-tag';
+    tag.textContent = "★ Editor's Pick";
+    first.appendChild(tag);
+  }
+}
+function setFeaturedFilter(type, btn){
+  document.querySelectorAll('#featuredChips .featured-chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  renderFeaturedGrid(type);
+}
+renderFeaturedGrid('all');
 document.getElementById('banglesGrid').innerHTML   = PRODUCTS.filter(p=>p.type==='bangle').map(renderCard).join('');
 document.getElementById('braceletsGrid').innerHTML = PRODUCTS.filter(p=>p.type==='bracelet').map(renderCard).join('');
+document.getElementById('jewelleryGrid').innerHTML = PRODUCTS.filter(p=>p.type==='jewellery').map(renderCard).join('');
 
 let cart = [];
 let currentPayMethod = 'COD';
@@ -1154,30 +1223,13 @@ let currentModalSize = '2.4';
 let currentModalColour = 'Golden';
 let currentModalQty  = 1;
 
-/* ══ DELIVERY & BULK DISCOUNT CONFIG ══ */
-const DELIVERY_RATES = {
-  'Rawalpindi': 0,
-  'Islamabad': 0,
-  'Lahore': 250,
-  'Karachi': 300,
-  'Faisalabad': 250,
-  'Multan': 250,
-  'Peshawar': 250,
-  'Other': 300
-};
-const FREE_DELIVERY_THRESHOLD = 3000;
+/* ══ BULK DISCOUNT CONFIG ══ */
 const BULK_QTY_THRESHOLD = 5;
 const BULK_DISCOUNT_PERCENT = 10;
 const MIN_ORDER_AMOUNT = 500;
 
 function getCartTotal() { return cart.reduce((s,i)=>s+i.price*i.qty,0); }
 function getCartQty() { return cart.reduce((s,i)=>s+i.qty,0); }
-
-function getDeliveryCharge(subtotal, city) {
-  if (subtotal >= FREE_DELIVERY_THRESHOLD) return 0;
-  if (!city) return null;
-  return DELIVERY_RATES.hasOwnProperty(city) ? DELIVERY_RATES[city] : DELIVERY_RATES['Other'];
-}
 
 function getBulkDiscount(subtotal, qty) {
   if (qty >= BULK_QTY_THRESHOLD) return Math.round(subtotal * BULK_DISCOUNT_PERCENT / 100);
@@ -1255,12 +1307,8 @@ function selectPay(el,method){ document.querySelectorAll('.pay-method').forEach(
 function updateOrderSummary(){
   const subtotal = getCartTotal();
   const qty = getCartQty();
-  const city = document.getElementById('sh-city') ? document.getElementById('sh-city').value : '';
   const bulkDiscount = getBulkDiscount(subtotal, qty);
-  const discountedSubtotal = subtotal - bulkDiscount;
-  const delivery = getDeliveryCharge(discountedSubtotal, city);
-  const deliveryDisplay = delivery === null ? null : delivery;
-  const total = discountedSubtotal + (deliveryDisplay || 0);
+  const total = subtotal - bulkDiscount;
 
   document.getElementById('sum-subtotal').textContent = 'Rs. ' + subtotal.toLocaleString();
 
@@ -1271,15 +1319,6 @@ function updateOrderSummary(){
     document.getElementById('sum-bulk-amt').textContent = '- Rs. ' + bulkDiscount.toLocaleString();
   } else {
     bulkRow.style.display = 'none';
-  }
-
-  const deliveryAmtEl = document.getElementById('sum-delivery-amt');
-  if (discountedSubtotal >= FREE_DELIVERY_THRESHOLD) {
-    deliveryAmtEl.textContent = 'FREE';
-    deliveryAmtEl.parentElement.classList.add('free');
-  } else {
-    deliveryAmtEl.parentElement.classList.remove('free');
-    deliveryAmtEl.textContent = city ? 'Rs. ' + (deliveryDisplay||0).toLocaleString() : 'Select city →';
   }
 
   document.getElementById('checkout-total').textContent = 'Rs. ' + total.toLocaleString();
@@ -1309,15 +1348,13 @@ function completeOrder(){
   const address = document.getElementById('sh-address').value.trim();
   const notes   = document.getElementById('sh-notes').value.trim();
   if(!name||!phone||!address){ alert('Please fill in your Name, WhatsApp Number and Address.'); return; }
-  if(!city){ alert('Please select your city so we can calculate delivery charges.'); return; }
+  if(!city){ alert('Please select your city.'); return; }
   const subtotal = getCartTotal();
   if(subtotal < MIN_ORDER_AMOUNT){ alert('Minimum order amount is Rs. '+MIN_ORDER_AMOUNT+'. Please add more items to proceed.'); return; }
 
   const qty = getCartQty();
   const bulkDiscount = getBulkDiscount(subtotal, qty);
-  const discountedSubtotal = subtotal - bulkDiscount;
-  const delivery = getDeliveryCharge(discountedSubtotal, city) || 0;
-  const grandTotal = discountedSubtotal + delivery;
+  const grandTotal = subtotal - bulkDiscount;
 
   const orderId = '#AB-' + Date.now().toString().slice(-6);
   const now = new Date();
@@ -1325,7 +1362,6 @@ function completeOrder(){
   const itemsText = cart.map(i=>`• ${i.name} (Size: ${i.size}, Colour: ${i.colour}) × ${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}`).join('\n');
   const subtotalAmt = 'Rs. ' + subtotal.toLocaleString();
   const bulkText = bulkDiscount>0 ? `🎁 Bulk Discount (${BULK_DISCOUNT_PERCENT}% off, ${qty} pcs): - Rs. ${bulkDiscount.toLocaleString()}\n` : '';
-  const deliveryText = delivery===0 ? 'FREE' : 'Rs. ' + delivery.toLocaleString();
   const totalAmt  = 'Rs. ' + grandTotal.toLocaleString();
 
   const ownerMsg =
@@ -1334,7 +1370,7 @@ function completeOrder(){
     `👤 *Customer Details*\nName: ${name}\n📞 WhatsApp: ${phone}\n🏙️ City: ${city}\n🏠 Address: ${address}\n` +
     (notes ? `📝 Note: ${notes}\n` : '') +
     `\n💳 Payment: *${currentPayMethod}*\n\n🛍️ *Order Items:*\n${itemsText}\n\n` +
-    `Subtotal: ${subtotalAmt}\n${bulkText}🚚 Delivery: ${deliveryText}\n💰 *Total: ${totalAmt}*`;
+    `Subtotal: ${subtotalAmt}\n${bulkText}💰 *Total: ${totalAmt}*`;
 
   const customerMsg =
     `🎉 *Order Confirmed — Abdullah Bangles*\n\nShukriya ${name}! Aap ka order mil gaya hai. ❤️\n\n` +
@@ -1342,14 +1378,14 @@ function completeOrder(){
     `🆔 Order ID: *${orderId}*\n📅 ${dateStr}\n━━━━━━━━━━━━━━━━━━\n` +
     `👤 Name: ${name}\n📞 WhatsApp: ${phone}\n🏙️ City: ${city}\n🏠 Address: ${address}\n💳 Payment: ${currentPayMethod}\n` +
     `━━━━━━━━━━━━━━━━━━\n📦 *Items:*\n${itemsText}\n━━━━━━━━━━━━━━━━━━\n` +
-    `Subtotal: ${subtotalAmt}\n${bulkText}🚚 Delivery: ${deliveryText}\n` +
+    `Subtotal: ${subtotalAmt}\n${bulkText}` +
     `💰 *Total: ${totalAmt}*\n\n` +
     `Hamari team aap se 1-2 ghante mein rabta karegi. Shukriya! 🙏\n📞 Abdullah Bangles: +92 323 506 3462`;
 
   saveOrderToLocalStorage({
     orderId, date: now.toISOString(), name, phone, city, address, notes,
     payment: currentPayMethod, items: cart.map(i=>({name:i.name,size:i.size,colour:i.colour,qty:i.qty,price:i.price})),
-    subtotal, bulkDiscount, delivery, total: grandTotal
+    subtotal, bulkDiscount, total: grandTotal
   });
 
   window.open('https://wa.me/923235063462?text='+encodeURIComponent(ownerMsg),'_blank');
@@ -1378,7 +1414,6 @@ function completeOrder(){
   } else {
     document.getElementById('r-bulk-row').style.display='none';
   }
-  document.getElementById('r-delivery').textContent = deliveryText;
   document.getElementById('r-total').textContent = totalAmt;
   cart=[];
   updateCartUI();

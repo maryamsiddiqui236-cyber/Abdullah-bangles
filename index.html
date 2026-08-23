@@ -124,6 +124,40 @@ header{position:sticky;top:0;z-index:500;background:rgba(12,22,16,0.97);backdrop
 .pc-price-main{font-family:'Playfair Display',serif;font-size:18px;color:var(--rose-lt);}
 .pc-stars{color:var(--rose);font-size:11px;margin-top:8px;}
 
+/* FEATURED COLLECTION — ENHANCED */
+.featured-wrap{position:relative;}
+.featured-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,rgba(201,149,110,.10),transparent 70%);pointer-events:none;z-index:0;}
+.featured-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:48px;flex-wrap:wrap;position:relative;z-index:1;}
+.featured-tab{padding:11px 26px;border:1px solid var(--border);background:var(--surface);color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:.3s;font-family:'Raleway',sans-serif;}
+.featured-tab:hover{border-color:rgba(201,149,110,.5);color:var(--rose-lt);}
+.featured-tab.active{background:var(--rose);border-color:var(--rose);color:#000;}
+.featured-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;position:relative;z-index:1;}
+.featured-hero-card{position:relative;overflow:hidden;cursor:pointer;border:1px solid var(--border);min-height:520px;}
+.featured-hero-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:.7s;}
+.featured-hero-card:hover img{transform:scale(1.06);}
+.featured-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,10,.95) 0%,rgba(8,14,10,.35) 45%,transparent 75%);display:flex;flex-direction:column;justify-content:flex-end;padding:38px;}
+.featured-hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--rose);color:#000;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;width:fit-content;margin-bottom:16px;}
+.featured-hero-cat{font-size:10px;color:var(--rose-lt);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:10px;}
+.featured-hero-name{font-family:'Playfair Display',serif;font-size:32px;color:var(--cream);line-height:1.25;margin-bottom:14px;max-width:420px;}
+.featured-hero-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.featured-hero-price{font-family:'Playfair Display',serif;font-size:24px;color:var(--rose-lt);}
+.featured-hero-stars{color:var(--rose);font-size:12px;}
+.featured-hero-btns{display:flex;gap:12px;margin-top:22px;}
+.featured-side-grid{display:grid;grid-template-rows:repeat(2,1fr);gap:24px;}
+.featured-side-card{position:relative;overflow:hidden;border:1px solid var(--border);cursor:pointer;background:var(--surface);display:grid;grid-template-columns:130px 1fr;transition:.35s;}
+.featured-side-card:hover{border-color:var(--rose);transform:translateX(4px);}
+.featured-side-img{position:relative;overflow:hidden;background:#111a14;}
+.featured-side-img img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.featured-side-card:hover .featured-side-img img{transform:scale(1.1);}
+.featured-side-body{padding:22px 22px 22px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+.featured-side-cat{font-size:9px;color:var(--rose);text-transform:uppercase;letter-spacing:2px;}
+.featured-side-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);line-height:1.3;}
+.featured-side-price{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose-lt);}
+.featured-side-arrow{position:absolute;bottom:18px;right:18px;width:34px;height:34px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:12px;transition:.3s;background:rgba(15,56,40,.6);}
+.featured-side-card:hover .featured-side-arrow{background:var(--rose);color:#000;border-color:var(--rose);transform:translateX(3px);}
+@media(max-width:1000px){.featured-layout{grid-template-columns:1fr;}.featured-hero-card{min-height:340px;}.featured-side-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;}.featured-side-card{grid-template-columns:100px 1fr;}}
+@media(max-width:600px){.featured-side-grid{grid-template-columns:1fr;}.featured-hero-name{font-size:24px;}.featured-tabs{gap:8px;}.featured-tab{padding:9px 16px;font-size:10px;}}
+
 /* FEATURED BAND */
 .featured-band{background:linear-gradient(135deg,var(--emerald-dk),var(--bg2));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 8%;}
 .featured-band-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:70px;align-items:center;}
@@ -365,21 +399,14 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
 .no-results{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);}
 .no-results i{font-size:40px;margin-bottom:14px;color:var(--border);display:block;}
 
-/* FEATURED — CHIPS + BENTO SHOWCASE */
-.featured-chips{display:flex;gap:10px;justify-content:center;margin-bottom:44px;flex-wrap:wrap;}
-.featured-chip{padding:10px 24px;border:1px solid var(--border);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:600;cursor:pointer;background:transparent;transition:.3s;font-family:'Raleway',sans-serif;}
-.featured-chip:hover{border-color:rgba(201,149,110,.5);color:var(--rose-lt);}
-.featured-chip.active{border-color:var(--rose);color:#000;background:var(--rose);}
-.featured-bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:20px;}
-.featured-bento .product-card:first-child{grid-column:span 2;grid-row:span 2;}
-.featured-bento .product-card:first-child .pc-img{height:100%;}
-.featured-bento .product-card:first-child .pc-body{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(8,14,10,.96) 20%,transparent 100%);padding-top:60px;}
-.featured-bento .product-card:first-child{position:relative;}
-.featured-bento .product-card:first-child .pc-name{font-size:24px;}
-.featured-bento .product-card:first-child .pc-price-main{font-size:22px;}
-.featured-bento .product-card:first-child .spotlight-tag{position:absolute;top:14px;left:14px;background:var(--rose);color:#000;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 12px;z-index:3;}
-@media(max-width:900px){.featured-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px;}.featured-bento .product-card:first-child{grid-column:span 2;grid-row:span 1;height:280px;}}
-@media(max-width:600px){.featured-bento{grid-template-columns:1fr;}.featured-bento .product-card:first-child{grid-column:span 1;height:260px;}}
+/* DELIVERY / BULK DISCOUNT UI */
+.delivery-note-box{background:rgba(26,92,69,.12);border:1px solid rgba(201,149,110,.2);padding:14px 16px;font-size:12px;color:var(--muted);margin-top:10px;line-height:1.7;}
+.delivery-note-box strong{color:var(--rose-lt);}
+.order-sum-line{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:5px 0;}
+.order-sum-line.discount{color:#4fae7a;}
+.order-sum-line.free{color:#4fae7a;font-weight:700;}
+.min-order-warning{background:rgba(200,80,60,.12);border:1px solid rgba(200,80,60,.35);color:#e08a75;font-size:12px;padding:12px 16px;margin-top:10px;display:none;}
+.min-order-warning.show{display:block;}
 
 /* RESPONSIVE */
 @media(max-width:1200px){.products-grid{grid-template-columns:repeat(3,1fr);}.why-grid{grid-template-columns:repeat(2,1fr);}.foot-grid{grid-template-columns:1fr 1fr;gap:40px;}.featured-band-inner{grid-template-columns:1fr;gap:50px;}.fb-img-wrap img{height:380px;}}
@@ -463,7 +490,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
       <div class="hero-left">
         <span class="hero-label">Handcrafted Jewellery</span>
         <h1>Timeless Beauty,<br><em>Modern Craft</em></h1>
-        <p class="hero-sub">Discover our handpicked collection of bangles, bracelets and fine jewellery — where tradition meets contemporary elegance.</p>
+        <p class="hero-sub">Discover our handpicked collection of bangles, bracelets and jewellery — where tradition meets contemporary elegance.</p>
         <div class="hero-btns">
           <button class="btn-primary" onclick="showSection('bangles')">Explore Collection</button>
           <button class="btn-outline" onclick="showSection('about')">Our Heritage</button>
@@ -480,7 +507,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <img class="showcase-center-img" src="https://raw.githubusercontent.com/mraryan824/abdullah-bangles-pics/refs/heads/main/picss/10.JPG" alt="Bangles Collection">
           <div class="showcase-float showcase-float-1">
             <div class="sf-label">In Stock</div>
-            <div class="sf-val">18+</div>
+            <div class="sf-val">13+</div>
             <div class="sf-sub">Designs Available</div>
           </div>
           <div class="showcase-float showcase-float-2">
@@ -496,26 +523,27 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
   <div class="stats-strip">
     <div class="stat-item"><div class="stat-num">14+</div><div class="stat-lbl">Years of Trust</div></div>
     <div class="stat-item"><div class="stat-num">5000+</div><div class="stat-lbl">Happy Customers</div></div>
-    <div class="stat-item"><div class="stat-num">18+</div><div class="stat-lbl">Unique Designs</div></div>
+    <div class="stat-item"><div class="stat-num">13+</div><div class="stat-lbl">Unique Designs</div></div>
     <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Authentic Quality</div></div>
   </div>
 
-  <section class="section" style="background:var(--bg2);">
-    <div class="sec-inner">
+  <section class="section featured-wrap" style="background:var(--bg2);">
+    <div class="featured-glow"></div>
+    <div class="sec-inner" style="position:relative;z-index:1;">
       <div class="sec-head">
         <span class="sec-eyebrow">Handpicked For You</span>
         <h2>Featured Collection</h2>
         <p>Our most loved pieces, crafted with exceptional care and precision</p>
       </div>
-      <div class="featured-chips" id="featuredChips">
-        <button class="featured-chip active" onclick="setFeaturedFilter('all', this)">All</button>
-        <button class="featured-chip" onclick="setFeaturedFilter('bangle', this)">Bangles</button>
-        <button class="featured-chip" onclick="setFeaturedFilter('bracelet', this)">Bracelets</button>
-        <button class="featured-chip" onclick="setFeaturedFilter('jewellery', this)">Jewellery</button>
+      <div class="featured-tabs" id="featuredTabs">
+        <div class="featured-tab active" data-cat="all" onclick="setFeaturedTab('all',this)">All Favourites</div>
+        <div class="featured-tab" data-cat="bangle" onclick="setFeaturedTab('bangle',this)">Bangles</div>
+        <div class="featured-tab" data-cat="bracelet" onclick="setFeaturedTab('bracelet',this)">Bracelets</div>
+        <div class="featured-tab" data-cat="jewellery" onclick="setFeaturedTab('jewellery',this)">Jewellery</div>
       </div>
-      <div class="products-grid featured-bento" id="featuredGrid"></div>
+      <div class="featured-layout" id="featuredLayout"></div>
       <div style="text-align:center;margin-top:48px;">
-        <button class="btn-primary" onclick="showSection('bangles')">View All Bangles</button>
+        <button class="btn-primary" onclick="showSection('bangles')">View Full Collection</button>
       </div>
     </div>
   </section>
@@ -693,7 +721,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
 <div class="page-section" id="sec-jewellery">
   <section class="section" style="background:var(--bg);padding-top:130px;">
     <div class="sec-inner">
-      <div class="sec-head"><span class="sec-eyebrow">Jewellery Collection</span><h2>Fine Jewellery</h2><p>Necklaces, earrings, rings and sets for every celebration</p></div>
+      <div class="sec-head"><span class="sec-eyebrow">New Arrival</span><h2>Exquisite Jewellery</h2><p>Necklaces, earrings & sets crafted for weddings and everyday elegance</p></div>
       <div class="search-sort-bar">
         <div class="search-box"><i class="fas fa-search"></i><input type="text" id="jewellery-search" placeholder="Search jewellery by name..." oninput="filterAndRender('jewellery')"></div>
         <div class="sort-box">
@@ -874,7 +902,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           </tbody>
         </table>
       </div>
-      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:24px;">💡 If between sizes, go for the larger size for comfort. <a href="https://wa.me/923235063462" target="_blank" style="color:var(--rose);">WhatsApp us</a> for personalized help!</p>
+      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:24px;">💡 If between sizes, go for the larger size for comfort. Jewellery pieces (necklaces, earrings) are Free Size. <a href="https://wa.me/923235063462" target="_blank" style="color:var(--rose);">WhatsApp us</a> for personalized help!</p>
     </div>
   </section>
   <footer class="site-footer">
@@ -905,7 +933,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
       <div class="faq-list">
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">📦 How long does delivery take? <i class="fas fa-plus"></i></button><div class="faq-a">Delivery typically takes 2–5 business days. For Rawalpindi/Islamabad, usually 1–2 days. Same-day delivery also available in selected areas.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">💳 What payment methods do you accept? <i class="fas fa-plus"></i></button><div class="faq-a">We accept Cash on Delivery (COD), Bank Transfer, JazzCash, EasyPaisa, and Credit/Debit Cards.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">✨ Are the bangles adjustable? <i class="fas fa-plus"></i></button><div class="faq-a">Most bangles come in standard sizes (2.4, 2.6, 2.8, 2.10). All colours are available. Bracelets are adjustable.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">✨ Are the bangles adjustable? <i class="fas fa-plus"></i></button><div class="faq-a">Most bangles come in standard sizes (2.4, 2.6, 2.8, 2.10). All colours are available. Bracelets are adjustable, and jewellery pieces are Free Size.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">🎨 Are all colours available? <i class="fas fa-plus"></i></button><div class="faq-a">Yes! All colours and sizes are available for all products. Select your preferred colour and size in the product page before ordering.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">🎁 Do you offer gift wrapping? <i class="fas fa-plus"></i></button><div class="faq-a">Yes! We offer complimentary gift wrapping on all orders. Just mention it when placing your order.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">🔄 Can I exchange my product? <i class="fas fa-plus"></i></button><div class="faq-a">Yes, exchanges are available within 7 days of delivery in original condition with tags intact.</div></div>
@@ -1015,6 +1043,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <li>Double check your selected size and colour before placing the order — changes cannot be made after confirmation.</li>
           <li>Cash on Delivery (COD) orders: Payment is collected at the time of delivery. Please keep exact change ready.</li>
           <li>JazzCash / EasyPaisa / Bank Transfer: Send payment screenshot on WhatsApp after ordering.</li>
+          <li>Delivery charges will be confirmed via WhatsApp within 1–2 hours of placing the order.</li>
           <li>Provide a complete and accurate delivery address including city, area and nearest landmark.</li>
           <li>Orders placed after 6 PM will be processed the next working day.</li>
           <li>For custom orders or bulk purchases, WhatsApp us directly at +92 323 506 3462.</li>
@@ -1044,7 +1073,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
           <div class="order-sum-line"><span>Subtotal</span><span id="sum-subtotal">Rs. 0</span></div>
           <div class="order-sum-line discount" id="sum-bulk-row" style="display:none;"><span id="sum-bulk-label">Bulk Discount</span><span id="sum-bulk-amt">- Rs. 0</span></div>
           <div class="order-total"><span>Total</span><span id="checkout-total">Rs. 0</span></div>
-          <div class="delivery-note-box" id="delivery-note-box"><strong>🎁 Bulk Discount:</strong> Order 5+ pieces and get 10% off automatically. Delivery charges (if any) will be confirmed by our team on WhatsApp after you place the order.</div>
+          <div class="delivery-note-box" id="delivery-note-box"><strong>📦 Delivery:</strong> Delivery charges will be calculated and confirmed with you via WhatsApp after order placement. <strong>🎁 Bulk Discount:</strong> Order 5+ pieces and get 10% off automatically.</div>
           <div class="min-order-warning" id="min-order-warning">⚠️ Minimum order amount is Rs. 500. Please add more items to proceed.</div>
         </div>
       </div>
@@ -1088,7 +1117,7 @@ tbody td{padding:14px 20px;font-size:14px;color:var(--text);}
       </div>
     </div>
     <div class="receipt-note">
-      ⚠️ Any applicable delivery charges will be confirmed via WhatsApp.<br>
+      ⚠️ Delivery charges will be calculated and confirmed via WhatsApp.<br>
       Our team will contact you within 1–2 hours to confirm your order.<br>
       📞 <strong>+92 323 506 3462</strong> &nbsp;|&nbsp; Pirwadhai, Rawalpindi
     </div>
@@ -1128,20 +1157,21 @@ const PRODUCTS = [
   {id:18, name:'Silver linen',             cat:'Bangles',   price:450,  pieces:12,  img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%205.jpg.jpeg?raw=true',type:'bangle'},
   {id:19, name:'Ruby Royale ',             cat:'Bangles',   price:500,  pieces:6,   img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%206.jpg.png?raw=true',type:'bangle'},
   {id:20, name:'Pearl Cascade',            cat:'Bracelets', price:500,  pieces:2,   img:'https://github.com/maryamsiddiqui236-cyber/Bangles-pic/blob/main/pic%207.jpg.png?raw=true',type:'bracelet'},
-  {id:21, name:'Gul rang stack',             cat:'Bangles',   price:500,  pieces:Full set,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%201.jpg.png',type:'bangle'},
-  {id:22, name:'Basanti sparkle ',             cat:'Bangles',   price:1000,  pieces:24,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%202.jpg.png',type:'bangle'},
-  {id:23, name:'Shahi zarrin set ',             cat:'Bangles',   price:1000,  pieces:6,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%203.jpg.png',type:'bangle'},
-  {id:24, name:'Yaqooti sparkle ',             cat:'Bangles',   price:600,  pieces:8,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%204.jpg.png',type:'bangle'},
-  {id:25, name:'Lehar gold set',             cat:'Bangles',   price:400,  pieces:12,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%205.jpg.png',type:'bangle'},
-  {id:26, name:'Noir sparkle ',             cat:'Bangles',   price:700,  pieces:12,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%206.jpg.png',type:'bangle'},
-  {id:27, name:'Rangoli stack ',             cat:'Bangles',   price:700,  pieces:12,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%207.jpg.png',type:'bangle'},
-  {id:28, name:'Anari stack  ',             cat:'Bangles',   price:350,  pieces:2,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%208.jpg.png',type:'bangle'},
-  {id:29, name:'Shahi sheesh mahal stack ',             cat:'Bangles',   price:600,  pieces:6,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%209.jpg.png',type:'bangle'},
-  {id:30, name:'Aftabi silver stack ',             cat:'Bangles',   price:500,  pieces:8,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2010.jpg.png',type:'bangle'},
-  {id:31, name:'Silver Frost Kangan Set',             cat:'Bangles',   price:500,  pieces:8,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2011.jpg.png',type:'bangle'},
-  {id:32, name:'Chamak dhamak set ',             cat:'Bangles',   price:1000,  pieces:Full set,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2012.jpg.png',type:'bangle'},
-  {id:33, name:'Pastel Prisim BANGLES ',             cat:'Bangles',   price:450,  pieces:12,   img:'https://raw.githubusercontent.com/maryamsiddiqui236-cyber/Bangles-pic/refs/heads/main/no%2013.jpg.png',type:'bangle'},
+
+  /* ══ JEWELLERY — replace img links below with your own product photos ══ */
+  {id:21, name:'Kundan Bridal Necklace Set', cat:'Jewellery', price:2500, pieces:null, img:'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800', type:'jewellery'},
+  {id:22, name:'Pearl Drop Earrings',        cat:'Jewellery', price:800,  pieces:2,    img:'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800', type:'jewellery'},
+  {id:23, name:'Chandbali Jhumka Set',       cat:'Jewellery', price:1500, pieces:2,    img:'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=800', type:'jewellery'},
+  {id:24, name:'Layered Choker Necklace',    cat:'Jewellery', price:1200, pieces:null, img:'https://images.unsplash.com/photo-1599459183200-59c7687a0275?q=80&w=800', type:'jewellery'},
+  {id:25, name:'Antique Gold Ring',          cat:'Jewellery', price:600,  pieces:1,    img:'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800', type:'jewellery'},
+  {id:26, name:'Meenakari Maang Tikka',      cat:'Jewellery', price:900,  pieces:1,    img:'https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=800', type:'jewellery'},
 ];
+
+const SIZE_OPTIONS = {
+  bangle: ['2.4','2.6','2.8','2.10'],
+  bracelet: ['Adjustable'],
+  jewellery: ['Free Size']
+};
 
 function renderCard(p) {
   const piecesTag = p.pieces ? `<div class="pc-pieces">${p.pieces} Pcs</div>` : '';
@@ -1193,25 +1223,52 @@ function filterAndRender(type) {
   renderGrid(gridId, list);
 }
 
-function renderFeaturedGrid(filterType){
-  const el = document.getElementById('featuredGrid');
-  let list = filterType==='all' ? PRODUCTS.slice(0,5) : PRODUCTS.filter(p=>p.type===filterType).slice(0,5);
-  if(!list.length){ el.innerHTML = `<div class="no-results"><i class="fas fa-search"></i>No products in this category yet.</div>`; return; }
-  el.innerHTML = list.map(renderCard).join('');
-  const first = el.querySelector('.product-card');
-  if(first){
-    const tag = document.createElement('div');
-    tag.className = 'spotlight-tag';
-    tag.textContent = "★ Editor's Pick";
-    first.appendChild(tag);
-  }
+function renderFeaturedSide(p){
+  return `<div class="featured-side-card" onclick="openModal(${p.id})">
+    <div class="featured-side-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+    <div class="featured-side-body">
+      <div class="featured-side-cat">${p.cat}</div>
+      <div class="featured-side-name">${p.name}</div>
+      <div class="featured-side-price">Rs. ${p.price.toLocaleString()}${p.pieces?` <span style="font-size:11px;color:var(--muted);">(${p.pieces} pcs)</span>`:''}</div>
+    </div>
+    <div class="featured-side-arrow"><i class="fas fa-arrow-right"></i></div>
+  </div>`;
 }
-function setFeaturedFilter(type, btn){
-  document.querySelectorAll('#featuredChips .featured-chip').forEach(c=>c.classList.remove('active'));
-  btn.classList.add('active');
-  renderFeaturedGrid(type);
+
+function renderFeaturedLayout(cat){
+  let pool = cat === 'all' ? PRODUCTS : PRODUCTS.filter(p=>p.type===cat);
+  if (pool.length < 3) pool = PRODUCTS;
+  const hero = pool[0];
+  const side = pool.slice(1,3);
+  const el = document.getElementById('featuredLayout');
+  el.innerHTML = `
+    <div class="featured-hero-card" onclick="openModal(${hero.id})">
+      <img src="${hero.img}" alt="${hero.name}">
+      <div class="featured-hero-overlay">
+        <span class="featured-hero-tag"><i class="fas fa-star"></i> Bestseller</span>
+        <div class="featured-hero-cat">${hero.cat}</div>
+        <div class="featured-hero-name">${hero.name}</div>
+        <div class="featured-hero-meta">
+          <span class="featured-hero-price">Rs. ${hero.price.toLocaleString()}</span>
+          <span class="featured-hero-stars">★★★★★</span>
+        </div>
+        <div class="featured-hero-btns">
+          <button class="btn-primary" onclick="event.stopPropagation();openModal(${hero.id})">Quick View</button>
+          <button class="btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;" onclick="event.stopPropagation();quickAddToCart(${hero.id})"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+        </div>
+      </div>
+    </div>
+    <div class="featured-side-grid">${side.map(renderFeaturedSide).join('')}</div>
+  `;
 }
-renderFeaturedGrid('all');
+
+function setFeaturedTab(cat, el){
+  document.querySelectorAll('.featured-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderFeaturedLayout(cat);
+}
+
+renderFeaturedLayout('all');
 document.getElementById('banglesGrid').innerHTML   = PRODUCTS.filter(p=>p.type==='bangle').map(renderCard).join('');
 document.getElementById('braceletsGrid').innerHTML = PRODUCTS.filter(p=>p.type==='bracelet').map(renderCard).join('');
 document.getElementById('jewelleryGrid').innerHTML = PRODUCTS.filter(p=>p.type==='jewellery').map(renderCard).join('');
@@ -1268,14 +1325,19 @@ function addToCart(productId, size, colour, qty) {
   toggleCart(true);
 }
 
-function quickAddToCart(productId) { addToCart(productId, '2.6', 'Golden', 1); }
+function quickAddToCart(productId) {
+  const p = PRODUCTS.find(x=>x.id===productId);
+  const defSize = (p && SIZE_OPTIONS[p.type]) ? SIZE_OPTIONS[p.type][0] : '2.6';
+  addToCart(productId, defSize, 'Golden', 1);
+}
 function removeFromCart(cartId){ cart=cart.filter(i=>i.cartId!==cartId); updateCartUI(); }
 function toggleCart(forceOpen){ const s=document.getElementById('cartSidebar'); if(forceOpen)s.classList.add('open'); else s.classList.toggle('open'); }
 
 function openModal(id) {
   const p = PRODUCTS.find(x=>x.id===id);
   if(!p) return;
-  currentModalId=id; currentModalSize='2.4'; currentModalColour='Golden'; currentModalQty=1;
+  const sizes = SIZE_OPTIONS[p.type] || ['Free Size'];
+  currentModalId=id; currentModalSize=sizes[0]; currentModalColour='Golden'; currentModalQty=1;
   document.getElementById('modal-img').src=p.img;
   document.getElementById('modal-cat').textContent=p.cat;
   document.getElementById('modal-name').textContent=p.name;
@@ -1283,7 +1345,7 @@ function openModal(id) {
   document.getElementById('modal-qty').textContent='1';
   const pEl = document.getElementById('modal-pieces-info');
   pEl.textContent = p.pieces ? `📦 This product comes as a set of ${p.pieces} pieces` : '';
-  document.querySelectorAll('.size-opt').forEach((el,i)=>el.classList.toggle('active',i===0));
+  document.getElementById('modal-sizes').innerHTML = sizes.map((s,i)=>`<div class="size-opt${i===0?' active':''}" onclick="selectSize(this)">${s}</div>`).join('');
   document.querySelectorAll('.colour-opt').forEach((el,i)=>el.classList.toggle('active',i===0));
   document.getElementById('productModal').classList.add('open');
 }
@@ -1308,7 +1370,8 @@ function updateOrderSummary(){
   const subtotal = getCartTotal();
   const qty = getCartQty();
   const bulkDiscount = getBulkDiscount(subtotal, qty);
-  const total = subtotal - bulkDiscount;
+  const discountedSubtotal = subtotal - bulkDiscount;
+  const total = discountedSubtotal;
 
   document.getElementById('sum-subtotal').textContent = 'Rs. ' + subtotal.toLocaleString();
 
@@ -1354,7 +1417,8 @@ function completeOrder(){
 
   const qty = getCartQty();
   const bulkDiscount = getBulkDiscount(subtotal, qty);
-  const grandTotal = subtotal - bulkDiscount;
+  const discountedSubtotal = subtotal - bulkDiscount;
+  const grandTotal = discountedSubtotal;
 
   const orderId = '#AB-' + Date.now().toString().slice(-6);
   const now = new Date();
